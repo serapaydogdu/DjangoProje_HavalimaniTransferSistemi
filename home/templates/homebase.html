@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{%  static 'img/fav.png'%}">
+    <!-- Author Meta -->
+    <meta name="author" content="codepixer">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>{% block title %} Django Havalimanı Transfer Sistemi {% endblock %}</title>
+    <meta name="keywords" content="{% block keywords %} Anasayfa anahtar kelimeler {% endblock %}">
+    <meta name="description" content="{% block description %} Anasayfa kısa açıklamalar {% endblock %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+
+    {% load static %}
+    <link rel="stylesheet" href="{%  static 'css/linearicons.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{%  static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/main.css' %}">
+
+    {% block head %} {% endblock %}
+</head>
+<body>
+
+{% include 'header.html' %}
+{% block sidebar %}  {% endblock %}
+{% block slider %} {% endblock %}
+{% block content %} {% endblock %}
+{% include 'footer.html' %}
+{% block footer %}{% endblock %}
+
+</body>
+</html>
