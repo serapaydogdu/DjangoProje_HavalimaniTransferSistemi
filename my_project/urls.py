@@ -18,11 +18,17 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from home import views
+
 urlpatterns = [
     path('', include('home.urls')),   #hiçbir şey yazılmazsa sitede boşa attık. yinede gitsin home home dersekte çalışır.
+    path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
+    path('references/', views.references, name='references'),
+    path('contact/', views.contact, name='contact'),
     path('home/', include('home.urls')),
     path('car/', include('car.urls')),
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 if settings.DEBUG: # new
-   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  #bu kısım olmazsa adminpanelde yüklenen resimleri göstermiyor.
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  #bu kısım olmazsa adminpanelde yüklenen resimleri göstermiyor.
