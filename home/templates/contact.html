@@ -29,12 +29,28 @@
     <!-- Start blog-posts Area -->
     <section class="blog-posts-area section-gap">
         <div class="container">
-            <div class="row">
+            <div class="row ">
+                <div class="col-md-4 ">
+                    <p><b><font color="#8a2be2" >Bize Ulaşın.. </font></b></p>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role ="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
 
-                {{ setting.contact|safe }}
+                    <form action="" method="post"  class="form-area contact-form text-left">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="SEND MESSAGE">
+                    </form>
+                </div>
+                <div class="col-md-8">
+                    {{ setting.contact|safe }}
+                </div>
 
             </div>
-        </div>
         </div>
     </section>
     <!-- End blog-posts Area -->
