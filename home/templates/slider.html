@@ -4,76 +4,36 @@
     <div class="container">
         <div class="row d-flex justify-content-center pb-40">
             <div class="col-md-8 pb-40 header-text">
-                <h1 class="text-center pb-10">Choose your Desired Car Model</h1>
+                <h1 class="text-center pb-10">Choose your Desired Car Model for Transferring </h1>
                 <p class="text-center">
                     Who are in extremely love with eco friendly system.
                 </p>
             </div>
         </div>
         <div class="active-model-carusel">
+
+            {% for rs in sliderdata %}
+
             <div class="row align-items-center single-model item">
                 <div class="col-lg-6 model-left">
                     <div class="title justify-content-between d-flex">
-                        <h4 class="mt-20">Audi 3000 msi</h4>
-                        <h2>$149<span>/day</span></h2>
+                        <h4 class="mt-20"> {{ rs.title }} </h4>
+                        <h2>  {{ rs.price }}<span>/day for one person</span></h2>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Capacity         : {{ rs.capacity }} <br>
+                        Amount           : {{ rs.amount }} <br>
+                        Description      : {{ rs.description }}<br>
                     </p>
-                    <p>
-                        Capacity         : 04 Person <br>
-                        Doors            : 04 <br>
-                        Air Condition    : Dual Zone <br>
-                        Transmission     : Automatic
-                    </p>
-                    <a class="text-uppercase primary-btn" href="#">Choose for Transferring This Car Now</a>
+                    <a class="text-uppercase primary-btn" href="/car/{{ rs.id }}/{{ rs.slug }}">Choose for Transferring </a>
                 </div>
                 <div class="col-lg-6 model-right">
-                    <img class="img-fluid" src="{% static 'img/car.jpg'%}" alt="">
+                    <img class="img-fluid" src="{{ rs.image.url }}" alt="">
                 </div>
             </div>
-            <div class="row align-items-center single-model item">
-                <div class="col-lg-6 model-left">
-                    <div class="title justify-content-between d-flex">
-                        <h4 class="mt-20">Audi 3000 msi</h4>
-                        <h2>$149<span>/day</span></h2>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <p>
-                        Capacity         : 04 Person <br>
-                        Doors            : 04 <br>
-                        Air Condition    : Dual Zone <br>
-                        Transmission     : Automatic
-                    </p>
-                    <a class="text-uppercase primary-btn" href="#">Choose for Transferring This Car Now</a>
-                </div>
-                <div class="col-lg-6 model-right">
-                    <img class="img-fluid" src="{% static 'img/car.jpg'%}" alt="">
-                </div>
-            </div>
-            <div class="row align-items-center single-model item">
-                <div class="col-lg-6 model-left">
-                    <div class="title justify-content-between d-flex">
-                        <h4 class="mt-20">Audi 3000 msi</h4>
-                        <h2>$149<span>/day</span></h2>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <p>
-                        Capacity         : 04 Person <br>
-                        Doors            : 04 <br>
-                        Air Condition    : Dual Zone <br>
-                        Transmission     : Automatic
-                    </p>
-                    <a class="text-uppercase primary-btn" href="#">Choose for Transferring This Car Now</a>
-                </div>
-                <div class="col-lg-6 model-right">
-                    <img class="img-fluid" src="{% static 'img/car.jpg' %}" alt="">
-                </div>
-            </div>
+
+            {% endfor %}
+
         </div>
     </div>
 </section>

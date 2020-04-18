@@ -3,12 +3,16 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from car.models import Car
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
 def index(request):       #setting ayarlarını getirecek . artık sitede görünecekler title ı vs.
     setting = Setting.objects.get(pk=1)    #templates in index inde değişiklik yapıldı.
-    context = {'setting': setting, 'page': 'home'}
+    sliderdata = Car.objects.all()[:4]
+    context = {'setting': setting,
+               'page': 'home',
+               'sliderdata':sliderdata}
     return render(request, 'index.html', context)  #index.htmle gönderdik.
 
 def hakkimizda(request):
