@@ -2,13 +2,9 @@
 <header id="header" id="home">
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
-            <div id="logo">
-                <a href="/">
-                    <img src="{% static 'img/logo.png' %}" alt="" title="" />
-                </a>
-            </div>
 
-        <!--
+
+            <!--
                 {% if page %}
                     <div class="category-nav">
                 {% else%}
@@ -20,20 +16,43 @@
             <nav id="nav-menu-container">
 
                 <ul class="nav-menu">
+                    <li class="menu-has-children dropdown left-sidebar"><a href="/category/{{ node.slug }}"><span class="lnr lnr-license"> </span> Filomuz Categories</a>
+                        <ul>
+
+                            {% load mptt_tags %}
+
+                            {% recursetree category %}
+                                <li><a href="/category/{{ node.slug }}">
+                                    {{ node.title }}
+
+                                    {% if not node.is_leaf_node %}
+                                        <ul class="children">
+                                            <li><a href= "/category/{{ node.slug }}"> {{ children }} </a> </li>
+                                        </ul>
+                                    {% endif %}
+                                    </a>
+                                </li>
+                            {% endrecursetree %}
+
+                            <!--<li><a href="blog-single.html">Blog Single</a></li>
+                            <li><a href="elements.html">Elements</a></li>
+                            -->
+                        </ul>
+                    </li>
                     <li class="menu-active"><a href="/">HomePage</a></li>
                     <li><a href="cars.html">Cars</a></li>
                     <li><a href="/hakkimizda">Aboutus</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/references">References</a></li>
 
-                    <li class="menu-has-children"><a href="">Pages</a>
-                        <ul>
-                            <li><a href="blog-single.html">Blog Single</a></li>
-                            <li><a href="elements.html">Elements</a></li>
-                        </ul>
-                    </li>
+
                 </ul>
             </nav><!-- #nav-menu-container -->
+            <div id="logo">
+                <a href="/">
+                    <img src="{% static 'img/logo.png' %}" alt="" title="" />
+                </a>
+            </div>
         </div>
     </div>
 </header><!-- #header -->

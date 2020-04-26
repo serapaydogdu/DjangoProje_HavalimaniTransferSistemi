@@ -1,0 +1,32 @@
+{% load static %}
+<!--
+<li class="menu-has-children dropdown left-sidebar"><a href="">Filomuz</a>
+    <ul>
+        <div class="container">
+            <h3 class="title"> Categories </h3>
+
+            <nav id="nav-menu-container">
+
+             <ul>
+
+                            {% load mptt_tags %}
+
+                            {% recursetree category %}
+                                <li><a href="/category/{{ node.slug }}">
+                                    {{ node.title }}
+
+                                    {% if not node.is_leaf_node %}
+                                        <ul class="children">
+                                            <li><a href= "/category/{{ node.slug }}"> {{ children }} </a> </li>
+                                        </ul>
+                                    {% endif %}
+                                    </a>
+                                </li>
+                            {% endrecursetree %}
+</nav>
+
+        </div>
+    </ul>
+</li>
+-->
+
