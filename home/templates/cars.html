@@ -1,0 +1,68 @@
+{% extends "homebase.html" %}
+
+{% block title %} Transfer Araçlarımız-{{ categorydata.title }} {% endblock %}
+{% block keywords %} {{ categorydata.keywords }} {% endblock %}
+{% block description %} {{ categorydata.description }} {% endblock %}
+
+{% block head %}    <!--bu homebase deki alana yazılırsa kullanıcı değiştiremez. adminden değişebilecek hale getirdik.-->
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}' />
+{% endblock %}
+
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+{% block content %}
+
+    <!-- start banner Area -->
+    <section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12" >
+                    <h1 class="text-white">
+                        GetTransfer
+                    </h1>
+                    <p class="text-white link-nav"><a href="/"> Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="/"> {{ categorydata.title }} </a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->
+    <!-- Start blog-posts Area -->
+    <section class="blog-posts-area section-gap" class="team-area section-gap team-page-teams" id="team">
+        <div class="container">
+
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-8">
+                    <div class="title text-center">
+                        <h3 class="mb-10"> Transferring Car for Your Choices - {{ categorydata.title }}</h3>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            {% for rs in cars %}
+
+                <div class="row justify-content-center d-flex align-items-center">
+                    <div class="col-md-4 single-team">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{ rs.image.url }}" alt="">
+                            <div class="align-items-center justify-content-center d-flex">
+                                <a href="/car/{{ rs.id }}/{{ rs.slug }}" class=" main-btn fa-question-circle">
+                                    <i class="fa fa search-widget"></i>
+                                    QUİCK VİEW
+                                </a>
+                            </div>
+                            <div class="meta-text mt-30 text-center">
+                                <h4>  ${{ rs.price }}<span>/day for one person</span></h4>
+                                <h4 class="mt-20"><a href="/car/{{ rs.id }}/{{ rs.slug }}"> {{ rs.title }} </a></h4>
+                                <p> Kapasite: {{ rs.capacity }} / Bagaj: {{ rs.amount }}</p>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End blog-posts Area -->
+
+{% endblock %}

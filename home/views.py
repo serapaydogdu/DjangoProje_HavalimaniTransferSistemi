@@ -1,5 +1,7 @@
+from unicodedata import category
+
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
@@ -19,12 +21,18 @@ def index(request):       #setting ayarlarını getirecek . artık sitede görü
 
 def hakkimizda(request):
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting}
+    context = {'setting': setting,
+               'category': category,
+               'page': hakkimizda,
+               }
     return render(request, 'hakkimizda.html', context)
 
 def references(request):
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting}
+    context = {'setting': setting,
+               'category': category,
+               'page': references,
+               }
     return render(request, 'references.html', context)
 
 def contact(request):
@@ -42,5 +50,19 @@ def contact(request):
             return HttpResponseRedirect('/contact')
     setting = Setting.objects.get(pk=1)
     form = ContactFormu()
-    context = {'setting': setting, 'form': form}
+    context = {'setting': setting,
+               'form': form,
+               'category': category,
+               'page': contact,
+               }
     return render(request, 'contact.html', context)
+
+def category_cars(request,id,slug):
+    category = Category.objects.all()
+    categorydata = Category.objects.get(pk=id)
+    cars = Car.objects.filter(category_id=id)
+    context = {'cars':cars,
+               'category': category,
+               'categorydata':categorydata
+               }
+    return render(request,'cars.html',context)
