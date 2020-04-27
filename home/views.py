@@ -13,10 +13,18 @@ def index(request):       #setting ayarlarını getirecek . artık sitede görü
     setting = Setting.objects.get(pk=1)    #templates in index inde değişiklik yapıldı.
     sliderdata = Car.objects.all()[:4]
     category = Category.objects.all()
+    daycars = Car.objects.all()[:4]
+    lastcars = Car.objects.all().order_by('-id')[:4]
+    randomcars = Car.objects.all().order_by('?')[:4]
+
     context = {'setting': setting,
                'category': category,
                'page': 'home',
-               'sliderdata':sliderdata}
+               'sliderdata':sliderdata,
+               'daycars': daycars,
+               'lastcars': lastcars,
+               'randomcars': randomcars
+               }
     return render(request, 'index.html', context)  #index.htmle gönderdik.
 
 def hakkimizda(request):

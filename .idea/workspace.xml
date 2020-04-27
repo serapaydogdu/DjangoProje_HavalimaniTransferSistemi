@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17e8f21-18e4-4385-ba56-98ee872a6061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/templates/cars.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/car/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +175,7 @@
       <workItem from="1587930480449" duration="1268000" />
       <workItem from="1587931762267" duration="675000" />
       <workItem from="1587990617996" duration="6142000" />
-      <workItem from="1587996824947" duration="3357000" />
+      <workItem from="1587996824947" duration="8961000" />
     </task>
     <task id="LOCAL-00001" summary="13. videoya kadar tamamlandı. İletişim, hakkımızda,referans sayfaları oluşturuldu.">
       <created>1586638409159</created>
@@ -209,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587860193050</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="16. video -&gt; Kategori ürünlerin gösterme tamamlandı.">
+      <created>1588001174298</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588001174298</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,13 +233,15 @@
     <MESSAGE value="14. videoya kadar tamamlandı. En son &quot;Contact Form Bize Ulaşın&quot; kısmı oluşturuldu." />
     <MESSAGE value="14. video tamamlandı.Slider oluşturuldu. Gereksiz kısımlar temizlendi." />
     <MESSAGE value="15. video tamamlandı.Admin'de ve Home'da Kategori alt kategori menü oluşturuldu." />
-    <option name="LAST_COMMIT_MESSAGE" value="15. video tamamlandı.Admin'de ve Home'da Kategori alt kategori menü oluşturuldu." />
+    <MESSAGE value="16. video -&gt; Kategori ürünlerin gösterme tamamlandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="16. video -&gt; Kategori ürünlerin gösterme tamamlandı." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="525" y="39" width="724" height="749" key="CommitChangelistDialog2" timestamp="1587860189275">
+    <state x="525" y="39" width="724" height="749" key="CommitChangelistDialog2" timestamp="1588001171869">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="525" y="39" width="724" height="749" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587860189275" />
+    <state x="525" y="39" width="724" height="749" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588001171869" />
     <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1587414100856">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -277,10 +282,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="69" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585523612884" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1587860205220">
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1588001182316">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587860205220" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588001182316" />
     <state x="544" y="31" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587166711496">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
