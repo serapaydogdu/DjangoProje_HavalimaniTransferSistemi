@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.#
 from mptt.admin import DraggableMPTTAdmin
 
-from car.models import Category, Car, Images
+from car.models import Category, Car, Images, Comment
 
 
 class CarImageInline(admin.TabularInline):    #extra istersek 5 satır daha açtık
@@ -58,6 +58,11 @@ class CategoryAdmin2(DraggableMPTTAdmin):
         return instance.cars_cumulative_count
     related_cars_cumulative_count.short_description = 'Related cars (in tree)'
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['subject', 'comment', 'car', 'user', 'status']
+    list_filter = ['status']
+
 admin.site.register(Category, CategoryAdmin2)
 admin.site.register(Car,CarAdmin)
 admin.site.register(Images,ImagesAdmin)
+admin.site.register(Comment,CommentAdmin)

@@ -50,7 +50,7 @@
 
                 <div class="title text-center">
                     <br>
-                    <h3 class="mb-10"> Transferring Car for Your Choices - {{ car.title }}</h3>
+                    <h3 class="mb-10 color-1"> Transferring Car for Your Choices - {{ car.title }}</h3>
                     <hr>
                 </div>
             </div>
@@ -87,130 +87,169 @@
                     <div class="content-wrap">
                         <div class="car-label">
                             <span>New</span>
-                            <span> </span>
+                            <span class="sale">-%20 </span>
                         </div>
                         <h2 class="car-name">{{ car.title }}</h2>
                         <h3 class="car-price">{{ car.price }} <del class="car-old-price">{{ car.price }}</del> </h3>
-                        <div>
-                            <div class="car-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
+                        <div class="col-md-7">
+                            <div class="single-review">
+                                <div class="star">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
                             </div>
                             <a href="#"> Review(s) / Add Review</a>
                         </div>
-                        <p><strong> Availability:</strong> In Now Stock</p>
-                        <p><strong> Marka-Model:</strong> GetTransfer</p>
-                        <p><strong> {{ car.description }} </strong> </p>
-                        <p><strong> {{ car.price }} / Price of One Person </strong> </p>
+
+                    </div>
+                    <p><strong> Availability:</strong> In Now Stock</p>
+                    <p><strong> Marka-Model:</strong> GetTransfer</p>
+                    <p><strong> {{ car.description }} </strong> </p>
+                    <p><strong> {{ car.price }} / Price of One Person </strong> </p>
 
 
-                        <div class="car-btns">
-                            <div class="qty-input">
-                                <span class="text-uppercase"> Kişi Sayısı:</span>
-                                <input class="input" type="number" min="0" max="{{ car.amount }}" value="1">
-                            </div>
-                            <br>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart </button>
-                            <div class="pull-right">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i> </button>
-                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i> </button>
-                                <button class="main-btn icon-btn"><i class="fa fa-share-alt"></i> </button>
-                            </div>
+                    <div class="car-btns">
+                        <div class="qty-input">
+                            <span class="text-uppercase"> Kişi Sayısı:</span>
+                            <input class="input" type="number" min="0" max="{{ car.amount }}" value="1">
+                        </div>
+                        <br>
+                        <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart </button>
+                        <div class="pull-right">
+                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i> </button>
+                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i> </button>
+                            <button class="main-btn icon-btn"><i class="fa fa-share-alt"></i> </button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-12 section-top-border">
-                    <div class="tabbable tab-content">
-                        <ul class="nav nav-tabs ">
+            <div class="col-md-12 section-top-border">
+                <div class="tabbable tab-content">
+                    <ul class="nav nav-tabs ">
 
-                            <li class="active col-md-2"><a href="#tab1" data-toggle="tab"><i class="icon-briefcase"></i> DETAİLS </a> </li>
-                            <li class="col-md-2"><a href="#tab2" data-toggle="tab"> REVİEWS </a> </li>
+                        <li class="active col-md-2"><a href="#tab1" data-toggle="tab"><i class="icon-briefcase"></i> DETAİLS </a> </li>
+                        <li class="col-md-2"><a href="#tab2" data-toggle="tab"> REVİEWS </a> </li>
 
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="tab1">
-                                <blockquote class="generic-blockquote">
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1">
+                            <blockquote class="generic-blockquote">
 
-                                    <p>{{ car.detail | safe }}</p>
+                                <p>{{ car.detail | safe }}</p>
 
-                                </blockquote>
-                            </div>
+                            </blockquote>
+                        </div>
 
 
-                            <div class="tab-pane fade in " id="tab2">
-                                <blockquote class="generic-blockquote" background-color="white">
+                        <div class="tab-pane " id="tab2">
+                            <blockquote class="generic-blockquote" >
 
-                                    <!-- Start comment-sec Area -->
-                                    <section class="comment-sec-area pt-80 pb-80 ">
-                                        <div class="container">
-                                            <div class="col-md-8">
-                                                <div class="row flex-column ">
-                                                    <h5 class="text-uppercase pb-80">05 Comments</h5>
-                                                    <br>
-                                                    <div class="comment-list">
-                                                        <div class="single-comment justify-content-between d-flex">
-                                                            <div class="user justify-content-between d-flex">
-                                                                <div class="thumb">
-                                                                    <img src="img/blog/c1.jpg" alt="">
-                                                                </div>
-                                                                <div class="desc">
-                                                                    <h5><a href="#">Emilly Blunt</a></h5>
-                                                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                                                    <p class="comment">
-                                                                        Never say goodbye till the end comes!
-                                                                    </p>
-                                                                </div>
+                                <div class="row col-md-12">
+                                    <div class="col-md-5 model-left">
+
+
+                                        {% for rs in comments %}
+
+                                            <div class="comment-list left-padding">
+                                                <div class="single-comment justify-content-between d-flex">
+                                                    <div class="user justify-content-between d-flex">
+                                                        <div class="desc">
+                                                            <div>
+                                                                <a href="#"><i class="fa fa-user-o"></i> <b>{{ rs.user.first_name }}</b></a>
+                                                                <p class="date"><i class="fa fa-clock-o"></i> {{ rs.create_at }}</p>
                                                             </div>
-                                                            <div class="reply-btn">
-                                                                <a href="" class="btn-reply text-uppercase">reply</a>
+                                                            <div class="review-rating pull-right">
+                                                                <span class="fa fa-star{% if rs.rate < 1 %}-o{% endif %}"></span>
+                                                                <span class="fa fa-star{% if rs.rate < 2 %}-o{% endif %}"></span>
+                                                                <span class="fa fa-star{% if rs.rate < 3 %}-o{% endif %}"></span>
+                                                                <span class="fa fa-star{% if rs.rate < 4 %}-o{% endif %}"></span>
+                                                                <span class="fa fa-star{% if rs.rate < 5 %}-o{% endif %}"></span>
                                                             </div>
+
+                                                            <div class="review-body">
+                                                                <div style="color:#BC8F8F " >{{ rs.subject }}</div>
+                                                                <p>
+                                                                    {{ rs.comment }}
+                                                                </p>
+                                                            </div>
+                                                            <hr>
+
                                                         </div>
                                                     </div>
 
                                                 </div>
                                             </div>
+                                        {% endfor %}
+
+                                       <!-- <div class="text-align-left">
+                                            <ul class="reviews-pages text-align-left">
+                                                <li class="active" >1</li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#"><i class="fa fa-caret-right"></i> </a></li>
+                                            </ul>
                                         </div>
-                                    </section>
-                                    <!-- End comment-sec Area -->
+                                        -->
+                                    </div>
 
-                                    <!-- Start commentform Area -->
-                                    <section class="commentform-area pt-80 ">
-                                        <div class="container ">
-                                            <div class="col-md-4">
-                                                <h5 class="pb-50">Leave a Reply</h5>
-                                                <div class="row flex-row d-flex " >
-                                                    <div class="col-lg-4 col-md-6">
-                                                        <input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
-                                                        <input name="email" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'" class="common-input mb-20 form-control" required="" type="email">
-                                                        <input name="Subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Subject'" class="common-input mb-20 form-control" required="" type="text">
 
-                                                    </div>
-                                                    <div class="col-lg-8 col-md-6">
-                                                        <textarea class="form-control mb-10" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                                                        <a class="primary-btn mt-20" href="#">Comment</a>
+                                    <div class="col-md-7 model-right">
+                                        <h5 class="text-center"> Write about your transfer journey with this car. </h5>
+                                        <hr>
+                                        <br>
+                                        {% if messages %}
+                                            {% for message in messages  %}
+                                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+
+                                        <p> Your email address will not be published. </p>
+
+                                        <form class="row flex-row d-flex form-area contact-form text-left"  action="/car/addcomment/{{ car.id }}" method="post">
+                                            {% csrf_token %}
+                                            <div class="col-lg-8 col-md-6 form-group">
+                                                <input name="subject" id="id_subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Subject'" class="input common-input mb-20 form-control" required="" type="text">
+                                            </div>
+
+                                            <div class="col-lg-8 col-md-6 form-group">
+                                                <textarea class=" input form-control mb-10" id="id_comment" name="comment" placeholder="Your Review" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+                                                <div class="col-md-7 ">
+                                                    <div class="star"> YOUR RATING :
+                                                        <input type="radio" id="star1" name="rate" value="1"/><label for="star1"></label>
+                                                        <input type="radio" id="star2" name="rate" value="2"/><label for="star2"></label>
+                                                        <input type="radio" id="star3" name="rate" value="3"/><label for="star3"></label>
+                                                        <input type="radio" id="star4" name="rate" value="4"/><label for="star4"></label>
+                                                        <input type="radio" id="star5" name="rate" value="5"/><label for="star5"></label>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </section>
-                                    <!-- End commentform Area -->
 
+                                            {% if user.id is not None %}
 
+                                                <div>
+                                                    <br>
+                                                    <button class="primary-btn mb-20">Send Comment</button>
+                                                </div>
 
+                                            {% else %}
+                                                <p>Yorum eklemek için <a href="/login">Login</a> olunuz.</p>
+                                            {% endif %}
 
-
-                                </blockquote>
-                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </blockquote>
                         </div>
-
-
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- End model Area -->
