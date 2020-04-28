@@ -6,6 +6,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from car.models import Car, Category, Images, Comment
+from home.forms import SearchForm
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
@@ -88,3 +89,18 @@ def car_detail(request,id,slug):
                'comments': comments,
                }
     return render(request,'car_detail.html',context)
+
+def car_search(request):
+    if request.method == 'POST':   #form post edildiyse
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            category = Category.objects.all()
+            query = form.cleaned_data['query']    #formdan bilgiyi al
+            cars = Car.objects.filter(title__icontains=query)   #Select * from car where title like %query%
+            #return HttpResponse(cars)        #contains li dersek içerir demek ama icontains dersek büyük küçük harf ayrımı yapmadan arama yapacak.
+            context = {'cars': cars,
+                       'category': category,
+                       }
+            return render(request, 'car_search.html', context)
+
+    return HttpResponseRedirect('/')

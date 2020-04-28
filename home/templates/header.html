@@ -16,6 +16,17 @@
             <nav id="nav-menu-container">
 
                 <ul class="nav-menu">
+
+                    <li>
+                        <div class="search-widget col-lg-8 col-md-6">
+                            <form class="example" action="/search/" method="post" style="margin:auto;max-width:300px">
+                                {% csrf_token %}
+                                <input type="text" class="input search-input" placeholder="Search keyword" name="query">
+                                <button type="search-btn"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </li>
+
                     <li class="menu-has-children dropdown left-sidebar"><a href="/category/{{ node.slug }}"><span class="lnr lnr-license"> </span> Filomuz Categories</a>
                         <ul>
 
@@ -30,7 +41,7 @@
                                             <li><a href= "/category/{{ node.slug }}"> {{ children }} </a> </li>
                                         </ul>
                                     {% endif %}
-                                    </a>
+                                </a>
                                 </li>
                             {% endrecursetree %}
 
@@ -44,6 +55,8 @@
                     <li><a href="/hakkimizda">Aboutus</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/references">References</a></li>
+
+
 
 
                 </ul>

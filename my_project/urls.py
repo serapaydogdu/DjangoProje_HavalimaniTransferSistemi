@@ -31,6 +31,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('category/<int:id>/<slug:slug>/',views.category_cars,name='category_cars'),
     path('car/<int:id>/<slug:slug>/',views.car_detail,name='car_detail'),
+    path('search/', views.car_search, name='car_search'),
 ]
 if settings.DEBUG: # new
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  #bu kısım olmazsa adminpanelde yüklenen resimleri göstermiyor.
