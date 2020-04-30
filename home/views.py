@@ -1,7 +1,8 @@
+import json
 from unicodedata import category
 
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -96,11 +97,36 @@ def car_search(request):
         if form.is_valid():
             category = Category.objects.all()
             query = form.cleaned_data['query']    #formdan bilgiyi al
-            cars = Car.objects.filter(title__icontains=query)   #Select * from car where title like %query%
+            catid = form.cleaned_data['catid']
+
+            #cars = Car.objects.filter(title__icontains=query)   #Select * from car where title like %query%
             #return HttpResponse(cars)        #contains li dersek içerir demek ama icontains dersek büyük küçük harf ayrımı yapmadan arama yapacak.
+
+               #get form data
+
+            if catid ==0:
+                cars = Car.objects.filter(title__icontains=query)
+            else:
+                cars = Car.objects.filter(title__icontains=query,category_id=catid)
+
             context = {'cars': cars,
                        'category': category,
                        }
             return render(request, 'car_search.html', context)
 
     return HttpResponseRedirect('/')
+
+def car_search_auto(request):
+  if request.is_ajax():
+    q = request.GET.get('term', '')
+    car = Car.objects.filter(title__icontains=q)
+    results = []
+    for rs in car:
+        car_json = {}
+        car_json = rs.title
+        results.append(car_json)
+    data = json.dumps(results)
+  else:
+    data = 'fail'
+  mimetype = 'application/json'
+  return HttpResponse(data, mimetype)

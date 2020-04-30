@@ -1,6 +1,25 @@
 {% load static %}
+
 <header id="header" id="home">
+
     <div class="container">
+        <script>
+            $(function() {
+                $("#query").autocomplete({
+                    source: "/search_auto/",
+                    select: function (event, ui) { //item selected
+                        AutoCompleteSelectHandler(event, ui)
+                    },
+                    minLength: 2,
+                });
+            });
+
+            function AutoCompleteSelectHandler(event, ui)
+            {
+                var selectedObj = ui.item;
+            }
+        </script>
+
         <div class="row align-items-center justify-content-between d-flex">
 
 
@@ -17,17 +36,36 @@
 
                 <ul class="nav-menu">
 
-                    <li>
-                        <div class="search-widget col-lg-8 col-md-6">
-                            <form class="example" action="/search/" method="post" style="margin:auto;max-width:300px">
+
+
+                    <li class=" example nice-select" tabindex="0">
+                        <div class="search-widget col-lg-8 col-md-6 header-search ">
+                            <form action="/search/"  method="post" style="margin:auto;max-width:300px">
                                 {% csrf_token %}
-                                <input type="text" class="input search-input" placeholder="Search keyword" name="query">
+
+                                {% load mptt_tags %}
+                                <select name="catid" >
+                                    <option value="0">All </option>
+                                    {% recursetree category %}
+                                        {% if node.is_leaf_node %}
+                                            <option value="{{ node.id }}">{{ node.title }}</option>
+                                        {% endif %}
+                                        {% if not node.is_leaf_node %}
+                                            <optgroup label="{{ node.title }}">
+                                                {{ children }}
+                                            </optgroup>
+                                        {% endif %}
+                                    {% endrecursetree %}
+
+                                </select>
+                                <input id="query" type="text" class="input search-input" placeholder="Search keyword" name="query">
                                 <button type="search-btn"><i class="fa fa-search"></i></button>
+
                             </form>
                         </div>
                     </li>
 
-                    <li class="menu-has-children dropdown left-sidebar"><a href="/category/{{ node.slug }}"><span class="lnr lnr-license"> </span> Filomuz Categories</a>
+                    <li class="menu-has-children dropdown left-sidebar"><a href="/category/{{ node.slug }}"><span class="lnr lnr-license"> </span> Filomuz </a>
                         <ul>
 
                             {% load mptt_tags %}
