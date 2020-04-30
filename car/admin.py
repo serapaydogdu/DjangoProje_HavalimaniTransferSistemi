@@ -16,10 +16,11 @@ class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('image_tag',)
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ['title', 'category', 'price', 'image_tag', 'amount', 'capacity', 'model', 'status']
-    readonly_fields = ('image_tag',)
+    list_display = ['title', 'category', 'price', 'image_tag','catimg_tag', 'amount', 'capacity', 'model', 'status']
+    readonly_fields = ('image_tag','catimg_tag')
     list_filter = ['status','category']
     inlines = [CarImageInline]          #yeni ürün eklerkende image galerisi ile beraber bize sunuyor.
+    prepopulated_fields = {'slug': ('title',)}
 
 class ImagesAdmin(admin.ModelAdmin):
     list_display = ['title', 'car', 'image_tag']  #bunlar görünsün dedik ama görünmesi için ImageAdmindeki şablona uy dedik.
@@ -30,6 +31,7 @@ class CategoryAdmin2(DraggableMPTTAdmin):
     list_display = ('tree_actions', 'indented_title',
                     'related_cars_count', 'related_cars_cumulative_count')
     list_display_links = ('indented_title',)
+    prepopulated_fields = {'slug': ('title',)}
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
