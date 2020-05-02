@@ -93,6 +93,25 @@
                     <li><a href="/hakkimizda">Aboutus</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/references">References</a></li>
+                    <li>
+                        {% if user.id is not None %}
+                            <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                                <div class="header-btns-icon">
+                                    <i class="fa fa-user-o"></i>
+                                    <strong class="text-uppercase">{{ user.first_name }}</strong>
+                                </div>
+                            </div>
+                        {% else %}
+                            <a href="/login/" class="text-uppercase">Login</a>/<a href="/join/" class="text-uppercase">Join</a>
+                        {% endif %}
+                        <ul class="custom-menu">
+                            <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+                            <li><a href="#"><i class="fa fa-exchange"></i> My Rezervations</a></li>
+                            <li><a href="#"><i class="fa fa-commenting-o"></i> My Comments</a></li>
+                            <li><a href="/logout/"><i class="fa fa-unlock-alt"></i> Logout</a></li>
+                        </ul>
+                    </li>
+
 
 
 
