@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17e8f21-18e4-4385-ba56-98ee872a6061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/urls.py" afterDir="false" />
@@ -187,7 +188,8 @@
       <workItem from="1588208003828" duration="3693000" />
       <workItem from="1588258497693" duration="2806000" />
       <workItem from="1588347873182" duration="433000" />
-      <workItem from="1588431240317" duration="5609000" />
+      <workItem from="1588431240317" duration="5709000" />
+      <workItem from="1588518528642" duration="5688000" />
     </task>
     <task id="LOCAL-00001" summary="13. videoya kadar tamamlandı. İletişim, hakkımızda,referans sayfaları oluşturuldu.">
       <created>1586638409159</created>
@@ -266,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588262707972</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="23. Video -&gt; Anasayfa'da User Login ve Logout İşlemleri tamamlandı.">
+      <created>1588437378290</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588437378290</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,14 +303,15 @@
     <MESSAGE value="20. video -&gt; Ürün Arama Product Search tamamlandı." />
     <MESSAGE value="21. video -&gt; Ajax JQuery ile Transfer için Araç Aramada Otomatik tamamlama yapıldı." />
     <MESSAGE value="Kategori ve ürün için otomatik slug oluşturma yapıldı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Kategori ve ürün için otomatik slug oluşturma yapıldı." />
+    <MESSAGE value="23. Video -&gt; Anasayfa'da User Login ve Logout İşlemleri tamamlandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="23. Video -&gt; Anasayfa'da User Login ve Logout İşlemleri tamamlandı." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="333" y="27" width="724" height="749" key="CommitChangelistDialog2" timestamp="1588262706395">
+    <state x="333" y="27" width="724" height="749" key="CommitChangelistDialog2" timestamp="1588437376081">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="333" y="27" width="724" height="749" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588262706395" />
+    <state x="333" y="27" width="724" height="749" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588437376081" />
     <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1587414100856">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -342,10 +352,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="69" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585523612884" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1588262711130">
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1588437381030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588262711130" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588437381030" />
     <state x="544" y="31" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587166711496">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

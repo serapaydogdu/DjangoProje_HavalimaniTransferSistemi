@@ -1,0 +1,73 @@
+{% extends "homebase.html" %}
+
+{% block title %} -Sign Up-{{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}    <!--bu homebase deki alana yazılırsa kullanıcı değiştiremez. adminden değişebilecek hale getirdik.-->
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}' />
+{% endblock %}
+
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+{% block content %}
+
+    <!-- start banner Area -->
+    <section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12" >
+                    <h1 class="text-white">
+                        GetTransfer
+                    </h1>
+                    <p class="text-white link-nav"><a href="/"> Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="blog-home.html"> User Sign Up </a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->
+    <!-- Start blog-posts Area -->
+    <section class="blog-posts-area section-gap">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12 ">
+
+                    <div class="section-title text-center">
+                        <h3 class="title"> SIGNUP FORMU </h3>
+                        <hr>
+                    </div>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role ="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="post">   <!-- buda bir form getirme şekli aynı zamanda contact taki {{ form.as_py }} da-->
+                        {% csrf_token %}
+
+                        {% for field in form %}
+                            <p>
+                                {{field.label_tag}}<br>
+                                {{field}}
+                                {% if field.help_text %}
+                                    <small style="color: grey">{{ field.help_text }}</small>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                    <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </p>
+                        {% endfor %}
+                        <button type="submit">Sign Up</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End blog-posts Area -->
+
+{% endblock %}

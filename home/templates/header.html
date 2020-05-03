@@ -88,8 +88,7 @@
                             -->
                         </ul>
                     </li>
-                    <li class="menu-active"><a href="/">HomePage</a></li>
-                    <li><a href="cars.html">Cars</a></li>
+                    <li class="menu-active"><a href="/"><i class="fa fa-plane"> </i> HomePage</a></li>
                     <li><a href="/hakkimizda">Aboutus</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/references">References</a></li>
@@ -98,11 +97,11 @@
                             <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                                 <div class="header-btns-icon">
                                     <i class="fa fa-user-o"></i>
-                                    <strong class="text-uppercase">{{ user.first_name }}</strong>
+                                    <strong class="text-uppercase">{{user.first_name}}</strong>
                                 </div>
                             </div>
                         {% else %}
-                            <a href="/login/" class="text-uppercase">Login</a>/<a href="/join/" class="text-uppercase">Join</a>
+                            <div><a href="/login/">Login</a> / <a href="/signup/">SignUp</a></div>
                         {% endif %}
                         <ul class="custom-menu">
                             <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
@@ -111,10 +110,6 @@
                             <li><a href="/logout/"><i class="fa fa-unlock-alt"></i> Logout</a></li>
                         </ul>
                     </li>
-
-
-
-
 
                 </ul>
             </nav><!-- #nav-menu-container -->

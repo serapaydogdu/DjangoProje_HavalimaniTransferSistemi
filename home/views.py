@@ -8,7 +8,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from car.models import Car, Category, Images, Comment
-from home.forms import SearchForm
+from home.forms import SearchForm, SignUpForm
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
@@ -137,7 +137,6 @@ def logout_view(request):
     return HttpResponseRedirect('/')
 
 def login_view(request):
-
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -154,3 +153,22 @@ def login_view(request):
     context = {'category': category,
                }
     return render(request, 'login.html', context)
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)   #formumuzu signup ile ilişkilendirdik.
+        if form.is_valid():               #valid kontrolü yaptık. şifre vs. uymuyorsa kurallara buna takılıyor.
+            form.save()                   #kurallar dolu mu boş mu şifreler aynı mı uyuyor mu vs. dorm.save ile tüm elemanları alıp eşleştirdik.
+            #return HttpResponse("Üye kaydedildi.") #kontrol ettim.
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return HttpResponseRedirect('/')
+
+    form = SignUpForm()
+    category = Category.objects.all()
+    context = {'category': category,
+               'form': form,
+               }
+    return render(request, 'signup.html', context)
