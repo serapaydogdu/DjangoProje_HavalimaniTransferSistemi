@@ -1,8 +1,10 @@
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
 from django.forms import ModelForm, TextInput, Textarea
+from django.utils.safestring import mark_safe
 
 
 class Setting(models.Model):
@@ -65,3 +67,27 @@ class ContactFormu(ModelForm):
             'email'      : TextInput(attrs={'class': 'common-input mb-20 form-control', 'placeholder': 'Email Address','required':' ', 'type':'email','pattern':'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$'}),
             'message'    : Textarea(attrs={'class': 'common-input mb-20 form-control', 'placeholder': 'Your Message', 'row':'5'}),
         }
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone = models.CharField(blank=True, max_length=20)
+    address = models.CharField(blank=True, max_length=150)
+    city = models.CharField(blank=True, max_length=20)
+    country = models.CharField(blank=True, max_length=20)
+    image = models.ImageField(blank=True, upload_to='images/users/')
+
+    def __str__(self):
+        return self.user.username
+
+    def user_name(self):
+        return self.user.first_name + ' ' +  self.user.last_name + ' [' +self.user.username + '] '
+
+    def image_tag(self):
+        return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
+    image_tag.short_description = 'Image'
+
+class UserProfileFormu(ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['phone', 'address', 'city', 'country', 'image']
