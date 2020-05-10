@@ -94,7 +94,7 @@
                     <li><a href="/references">References</a></li>
                     <li>
                         {% if user.id is not None %}
-                            <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                            <div class="dropdown-toggle" role="button" data-toggle="dropdown" arila-expanded="true">
                                 <div class="header-btns-icon">
                                     <i class="fa fa-user-o"></i>
                                     <strong class="text-uppercase">{{user.first_name}}</strong>
@@ -104,8 +104,8 @@
                             <div><a href="/login/">Login</a> / <a href="/signup/">SignUp</a></div>
                         {% endif %}
                         <ul class="custom-menu">
-                            <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-                            <li><a href="#"><i class="fa fa-exchange"></i> My Rezervations</a></li>
+                            <li><a href="/user"><i class="fa fa-user-o"></i> My Account</a></li>
+                            <li><a href="#"><i class="fa fa-exchange"></i> My Reservations</a></li>
                             <li><a href="#"><i class="fa fa-commenting-o"></i> My Comments</a></li>
                             <li><a href="/logout/"><i class="fa fa-unlock-alt"></i> Logout</a></li>
                         </ul>

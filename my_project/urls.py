@@ -22,13 +22,15 @@ from home import views
 
 urlpatterns = [
     path('', include('home.urls')),   #hiçbir şey yazılmazsa sitede boşa attık. yinede gitsin home home dersekte çalışır.
+    path('home/', include('home.urls')),
+    path('car/', include('car.urls')),
+    path('user/', include('user.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('admin/', admin.site.urls),
+
     path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
     path('references/', views.references, name='references'),
     path('contact/', views.contact, name='contact'),
-    path('home/', include('home.urls')),
-    path('car/', include('car.urls')),
-    path('admin/', admin.site.urls),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('category/<int:id>/<slug:slug>/',views.category_cars,name='category_cars'),
     path('car/<int:id>/<slug:slug>/',views.car_detail,name='car_detail'),
     path('search/', views.car_search, name='car_search'),

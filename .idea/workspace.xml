@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17e8f21-18e4-4385-ba56-98ee872a6061" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +62,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\my_project\user\templates" />
+      <recent name="C:\Django\my_project\user" />
       <recent name="C:\Django\my_project\home\templates" />
       <recent name="C:\Django\my_project\car" />
     </key>
@@ -187,7 +194,17 @@
       <workItem from="1588347873182" duration="433000" />
       <workItem from="1588431240317" duration="5709000" />
       <workItem from="1588518528642" duration="6021000" />
-      <workItem from="1588601626493" duration="4715000" />
+      <workItem from="1588601626493" duration="4810000" />
+      <workItem from="1588694951032" duration="11000" />
+      <workItem from="1588773013619" duration="17000" />
+      <workItem from="1588881402308" duration="19000" />
+      <workItem from="1588885712514" duration="1283000" />
+      <workItem from="1588950037233" duration="860000" />
+      <workItem from="1588964570629" duration="243000" />
+      <workItem from="1588982379285" duration="4286000" />
+      <workItem from="1589023596517" duration="27000" />
+      <workItem from="1589055066382" duration="331000" />
+      <workItem from="1589062090879" duration="8726000" />
     </task>
     <task id="LOCAL-00001" summary="13. videoya kadar tamamlandı. İletişim, hakkımızda,referans sayfaları oluşturuldu.">
       <created>1586638409159</created>
@@ -280,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588524655846</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="25. video -&gt; User Profile ile Ek Bilgiler ve resim tamamlandı.">
+      <created>1588609601605</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1588609601605</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,18 +334,19 @@
     <MESSAGE value="Kategori ve ürün için otomatik slug oluşturma yapıldı." />
     <MESSAGE value="23. Video -&gt; Anasayfa'da User Login ve Logout İşlemleri tamamlandı." />
     <MESSAGE value="Üye kayıt formu User Sign Up Form tamamlandı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Üye kayıt formu User Sign Up Form tamamlandı." />
+    <MESSAGE value="25. video -&gt; User Profile ile Ek Bilgiler ve resim tamamlandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="25. video -&gt; User Profile ile Ek Bilgiler ve resim tamamlandı." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1588524654243">
+    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1588609600034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588524654243" />
-    <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1587414100856">
+    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588609600034" />
+    <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1589023621803">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="579" y="180" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587414100856" />
+    <state x="579" y="180" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589023621803" />
     <state width="910" height="261" key="GridCell.Tab.0.bottom" timestamp="1587860221128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -358,10 +383,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="69" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585523612884" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1588524659426">
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1588609607362">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588524659426" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588609607362" />
     <state x="544" y="31" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587166711496">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
