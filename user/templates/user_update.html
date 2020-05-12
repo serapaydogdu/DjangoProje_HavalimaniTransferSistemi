@@ -1,0 +1,66 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user_name }} Profile {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}    <!--bu homebase deki alana yazılırsa kullanıcı değiştiremez. adminden değişebilecek hale getirdik.-->
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}' />
+{% endblock %}
+
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+{% block content %}
+    <!-- start banner Area -->
+    <section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12" >
+                    <h1 class="text-white">
+                        GetTransfer
+                    </h1>
+                    <p class="text-white link-nav"><a href="/"> Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="/user"> User Profile </a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->
+    <!-- Start blog-posts Area -->
+    <section class="section-gap">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3 ">
+
+                    {% include "user_panel.html" %}
+
+                </div>
+                <div class="col-md-9 single-widget ">
+                    <div class="text-uppercase"><h4><font color="#8a2be2"> User Information Update </font></h4></div>
+                    <hr>
+                    <div class="content-section">
+                        <div class="media">
+                            <img src="{{ user.userprofile.image.url }}" style="height: 150px ; border-radius: 20px">
+                        </div>
+                        <hr>
+
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <fieldset  class="form-group">
+
+                                {{ user_form.as_p }}
+                                {{ profile_form.as_p }}
+
+                            </fieldset>
+                            <div class="form-group">
+                                <button class="genric-btn success radius text-uppercase" type="submit">Update</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End blog-posts Area -->
+
+{% endblock %}
