@@ -19,12 +19,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 from home import views
+from reservation import views as reservationviews
 
 urlpatterns = [
     path('', include('home.urls')),   #hiçbir şey yazılmazsa sitede boşa attık. yinede gitsin home home dersekte çalışır.
     path('home/', include('home.urls')),
     path('car/', include('car.urls')),
     path('user/', include('user.urls')),
+    path('reservation/', include('reservation.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
 
@@ -38,6 +40,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout_view'),
     path('login/', views.login_view, name='login_view'),
     path('signup/', views.signup_view, name='signup_view'),
+    path('reservationcart/', reservationviews.reservationcart, name='reservationcart')
 
 
 ]

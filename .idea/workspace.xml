@@ -2,13 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17e8f21-18e4-4385-ba56-98ee872a6061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/migrations/0002_reservationcart_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/templates/reservationcart_cars.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Lincoln_Town_Cartier_Long.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Mercedes_E_Serisi2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Mercedes_E_Serisi3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Mercedes_Sprinter_Vansports.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/business_wedGXwb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/comfort1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/eco1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/eco2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/ekonomi_MpVcTuX.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/imagesMercedes_Vito_-_Benz.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/mercedes-sprinter-t.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/mercedes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/mercedes1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/mercedes2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/mercedes3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/mercedes4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/mercedes5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/premium_R3PbUKe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/suv1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/suv2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/suv3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/tr-filomuz-sprinter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/van1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/van2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/vito_C1y4JQJ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/vito_bAlFczs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/vitovitoo_2bsQdw7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/vittto.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/volkswagen-passat-siyah.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/car/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/car_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/urls.py" afterDir="false" />
     </list>
@@ -28,7 +69,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
@@ -51,26 +108,39 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Django\my_project\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1YLF0dTPj4Y40RS9UPjf6dtgnXK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/reservation/templates" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\my_project\reservation\templates" />
+      <recent name="C:\Django\my_project\reservation" />
       <recent name="C:\Django\my_project\user\templates" />
       <recent name="C:\Django\my_project\user" />
       <recent name="C:\Django\my_project\home\templates" />
-      <recent name="C:\Django\my_project\car" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.my_project">
@@ -204,7 +274,13 @@
       <workItem from="1588982379285" duration="4286000" />
       <workItem from="1589023596517" duration="27000" />
       <workItem from="1589055066382" duration="331000" />
-      <workItem from="1589062090879" duration="8726000" />
+      <workItem from="1589062090879" duration="9031000" />
+      <workItem from="1589122446683" duration="145000" />
+      <workItem from="1589153626855" duration="32000" />
+      <workItem from="1589154486365" duration="3000" />
+      <workItem from="1589198945676" duration="30358000" />
+      <workItem from="1589247970263" duration="115000" />
+      <workItem from="1589273062428" duration="4639000" />
     </task>
     <task id="LOCAL-00001" summary="13. videoya kadar tamamlandı. İletişim, hakkımızda,referans sayfaları oluşturuldu.">
       <created>1586638409159</created>
@@ -304,7 +380,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588609601605</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Anasayfa Üye Paneli ve Profil Bilgileri tamamlandı.">
+      <created>1589072279587</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589072279587</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Anasayfa Üye Paneli ve Profil Bilgileri tamamlandı.">
+      <created>1589072506287</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1589072506287</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +411,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="13. videoya kadar tamamlandı. İletişim, hakkımızda,referans sayfaları oluşturuldu." />
     <MESSAGE value="14. videoya kadar tamamlandı. En son &quot;Contact Form Bize Ulaşın&quot; kısmı oluşturuldu." />
     <MESSAGE value="14. video tamamlandı.Slider oluşturuldu. Gereksiz kısımlar temizlendi." />
@@ -335,18 +426,23 @@
     <MESSAGE value="23. Video -&gt; Anasayfa'da User Login ve Logout İşlemleri tamamlandı." />
     <MESSAGE value="Üye kayıt formu User Sign Up Form tamamlandı." />
     <MESSAGE value="25. video -&gt; User Profile ile Ek Bilgiler ve resim tamamlandı." />
-    <option name="LAST_COMMIT_MESSAGE" value="25. video -&gt; User Profile ile Ek Bilgiler ve resim tamamlandı." />
+    <MESSAGE value="Anasayfa Üye Paneli ve Profil Bilgileri tamamlandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Anasayfa Üye Paneli ve Profil Bilgileri tamamlandı." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1589072277386">
+    <state x="361" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589240378151">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589072277386" />
-    <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1589023621803">
+    <state x="361" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589240378151" />
+    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1589072503102">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="579" y="180" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589023621803" />
+    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589072503102" />
+    <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1589240369601">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="579" y="180" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589240369601" />
     <state width="910" height="261" key="GridCell.Tab.0.bottom" timestamp="1587860221128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -1,12 +1,12 @@
 {% extends "homebase.html" %}
 {% load static %}
 
-{% block title %} {{ car.title}} {% endblock %}
+{% block title %} {{ car.title }} {% endblock %}
 {% block keywords %} {{ car.keywords }} {% endblock %}
 {% block description %} {{ car.description }} {% endblock %}
 
-{% block head %}    <!--bu homebase deki alana yazılırsa kullanıcı değiştiremez. adminden değişebilecek hale getirdik.-->
-    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}' />
+{% block head %}
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
 {% endblock %}
 
 {% block sidebar %}{% include "sidebar.html" %}{% endblock %}
@@ -19,11 +19,12 @@
         <div class="overlay overlay-bg"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="about-content col-lg-12" >
+                <div class="about-content col-lg-12">
                     <h1 class="text-white">
                         GetTransfer
                     </h1>
-                    <p class="text-white link-nav"><a href="/"> Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="blog-home.html"> Transfer Araç Detay  </a></p>
+                    <p class="text-white link-nav"><a href="/"> Home </a> <span class="lnr lnr-arrow-right"></span> <a
+                            href="blog-home.html"> Transfer Araç Detay </a></p>
                 </div>
             </div>
         </div>
@@ -32,15 +33,21 @@
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="#"> Home >>  </a></li>
-                <li><a href="#">  Transfer Cars  >>  </a></li>
-                <li><a href="/category/{{ car.category_id }}/{{ car.category.slug }}"> {{ car.category }} >>  </a></li>
-                <li><a href="#"> {{  car.title }} </a></li>
+                <li><a href="#"> Home >> </a></li>
+                <li><a href="#"> Transfer Cars >> </a></li>
+                <li><a href="/category/{{ car.category_id }}/{{ car.category.slug }}"> {{ car.category }} >> </a></li>
+                <li><a href="#"> {{ car.title }} </a></li>
             </ul>
         </div>
     </div>
 
-
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
 
     <!-- Start model Area -->
     <section class="model-area section-gap" id="cars">
@@ -57,74 +64,78 @@
 
 
             <div class="row justify-content-center d-flex align-items-center ">
-                <div class="col-md-8">
-                    <div id="car-view" >
-                        <div class="car-view" class="owl-dot active">
+                <div class="active-model-carusel col-lg-6">
+
+                    <div class="row align-items-center single-model item">
+                        <div class="col-lg-12 ">
                             <img class="img-fluid" src="{{ car.image.url }}" alt="">
                         </div>
-                        {% for rs in images %}
-                            <div class=" row align-items-center single-model item">
+                    </div>
+
+                    {% for rs in images %}
+
+                        <div class="row align-items-center single-model item">
+
+                            <div class="col-lg-12 ">
                                 <img class="img-fluid" src="{{ rs.image.url }}" alt="">
                             </div>
-                        {% endfor %}
-                    </div>
-                    <div id="car-main-view">
-
-                        <div class="col-md-4 model-left">
-                            <img class="img-fluid" src="{{ car.image.url }}" alt="">
                         </div>
 
-                        {% for rs in images %}
-                            <div class="thumb row align-items-center single-model item">
-                                <div>
-                                    <img class="img-fluid" src="{{ rs.image.url }}" alt="">
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
+                    {% endfor %}
+
                 </div>
+
+
                 <div class="col-md-4">
+
                     <div class="content-wrap">
-                        <div class="car-label">
+                        <!--<div class="car-label">
                             <span>New</span>
                             <span class="sale">-%20 </span>
                         </div>
-                        <h2 class="car-name">{{ car.title }}</h2>
-                        <h3 class="car-price">{{ car.price }} <del class="car-old-price">{{ car.price }}</del> </h3>
+                        -->
+                        <h3 class="car-name">{{ car.title }}</h3>
+                        <h4 class="car-price">{{ car.price }}
+                            <del class="car-old-price">{{ car.price }}</del>
+                        </h4>
                         <div class="col-md-7">
-                            <div class="single-review">
-                                <div class="star">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                            </div>
                             <a href="#"> Review(s) / Add Review</a>
                         </div>
-
+                        <hr>
                     </div>
-                    <p><strong> Availability:</strong> In Now Stock</p>
-                    <p><strong> Marka-Model:</strong> GetTransfer</p>
-                    <p><strong> {{ car.description }} </strong> </p>
-                    <p><strong> {{ car.price }} / Price of One Person </strong> </p>
-
+                    <p><strong> Availability : </strong> In Now Stock</p>
+                    <p><strong> Marka-Model : </strong> GetTransfer</p>
+                    <p><strong> Transfer Tanımı : {{ car.description }} </strong></p>
+                    <p><strong> Max. Kapasite : {{ car.capacity }} / Bagaj Miktarı : {{ car.amount }}</strong></p>
+                    <p><strong> Price : {{ car.price }} / Price of One Person </strong></p>
 
                     <div class="car-btns">
-                        <div class="qty-input">
-                            <span class="text-uppercase"> Kişi Sayısı:</span>
-                            <input class="input" type="number" min="0" max="{{ car.amount }}" value="1">
+                        <form action="/reservation/reservetocart/{{ car.id }}" method="post">
+                            {% csrf_token %}
+                            <div class="qty-input">
 
-                            <div class="pull-right">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i> </button>
-                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i> </button>
-                                <button class="main-btn icon-btn"><i class="fa fa-share-alt"></i> </button>
+                                <span class="text-uppercase"> Kişi Sayısı:</span>
+                                <input name="quantity" class="input" type="number" min="0" max="{{ car.amount }}"
+                                       value="1">
+                                <br>
+                                <div>
+                                    <div class="col-md-10 left-padding">
+                                        <div class="input-group dates-wrap">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><span
+                                                        class="lnr lnr-calendar-full"></span></span>
+                                            </div>
+                                            <input id="datepicker" name="date" class="dates form-control"
+                                                   placeholder="Date & Time" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
-                        <br>
-                        <button class="primary-btn add-to-cart"><i class="fa fa-car"></i> Add Car for Transfer </button>
-
+                            <br>
+                            <button type="submit" class="primary-btn"><i class="fa fa-car"></i> Add Car for Transfer
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -133,8 +144,9 @@
                 <div class="tabbable tab-content">
                     <ul class="nav nav-tabs ">
 
-                        <li class="active col-md-2"><a href="#tab1" data-toggle="tab"><i class="icon-briefcase"></i> DETAİLS </a> </li>
-                        <li class="col-md-2"><a href="#tab2" data-toggle="tab"> REVİEWS </a> </li>
+                        <li class="active col-md-2"><a href="#tab1" data-toggle="tab"><i class="icon-briefcase"></i>
+                            DETAİLS </a></li>
+                        <li class="col-md-2"><a href="#tab2" data-toggle="tab"> REVİEWS </a></li>
 
                     </ul>
                     <div class="tab-content">
@@ -147,7 +159,7 @@
                         </div>
 
                         <div class="tab-pane " id="tab2">
-                            <blockquote class="generic-blockquote" >
+                            <blockquote class="generic-blockquote">
 
                                 <div class="row col-md-12">
                                     <div class="col-md-5 model-left">
@@ -159,8 +171,11 @@
                                                     <div class="user justify-content-between d-flex">
                                                         <div class="desc">
                                                             <div>
-                                                                <a href="#"><i class="fa fa-user-o"></i> <b>{{ rs.user.first_name }}</b></a>
-                                                                <p class="date"><i class="fa fa-clock-o"></i> {{ rs.create_at }}</p>
+                                                                <a href="#"><i class="fa fa-user-o"></i>
+                                                                    <b>{{ rs.user.first_name }}</b></a>
+                                                                <p class="date"><i
+                                                                        class="fa fa-clock-o"></i> {{ rs.create_at }}
+                                                                </p>
                                                             </div>
                                                             <div class="review-rating pull-right">
                                                                 <span class="fa fa-star{% if rs.rate < 1 %}-o{% endif %}"></span>
@@ -171,7 +186,7 @@
                                                             </div>
 
                                                             <div class="review-body">
-                                                                <div style="color:#BC8F8F " >{{ rs.subject }}</div>
+                                                                <div style="color:#BC8F8F ">{{ rs.subject }}</div>
                                                                 <p>
                                                                     {{ rs.comment }}
                                                                 </p>
@@ -201,31 +216,38 @@
                                         <h5 class="text-center"> Write about your transfer journey with this car. </h5>
                                         <hr>
                                         <br>
-                                        {% if messages %}
-                                            {% for message in messages  %}
-                                                <div class="alert alert-{{ message.tags }}" role="alert">
-                                                    {{ message }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
+
 
                                         <p> Your email address will not be published. </p>
 
-                                        <form class="row flex-row d-flex form-area contact-form text-left"  action="/car/addcomment/{{ car.id }}" method="post">
+                                        <form class="row flex-row d-flex form-area contact-form text-left"
+                                              action="/car/addcomment/{{ car.id }}" method="post">
                                             {% csrf_token %}
                                             <div class="col-lg-8 col-md-6 form-group">
-                                                <input name="subject" id="id_subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Subject'" class="input common-input mb-20 form-control" required="" type="text">
+                                                <input name="subject" id="id_subject" placeholder="Subject"
+                                                       onfocus="this.placeholder = ''"
+                                                       onblur="this.placeholder = 'Enter your Subject'"
+                                                       class="input common-input mb-20 form-control" required=""
+                                                       type="text">
                                             </div>
 
                                             <div class="col-lg-8 col-md-6 form-group">
-                                                <textarea class=" input form-control mb-10" id="id_comment" name="comment" placeholder="Your Review" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+                                                <textarea class=" input form-control mb-10" id="id_comment"
+                                                          name="comment" placeholder="Your Review"
+                                                          onfocus="this.placeholder = ''"
+                                                          onblur="this.placeholder = 'Messege'" required=""></textarea>
                                                 <div class="col-md-7 ">
                                                     <div class="star"> YOUR RATING :
-                                                        <input type="radio" id="star1" name="rate" value="1"/><label for="star1"></label>
-                                                        <input type="radio" id="star2" name="rate" value="2"/><label for="star2"></label>
-                                                        <input type="radio" id="star3" name="rate" value="3"/><label for="star3"></label>
-                                                        <input type="radio" id="star4" name="rate" value="4"/><label for="star4"></label>
-                                                        <input type="radio" id="star5" name="rate" value="5"/><label for="star5"></label>
+                                                        <input type="radio" id="star1" name="rate" value="1"/><label
+                                                                for="star1"></label>
+                                                        <input type="radio" id="star2" name="rate" value="2"/><label
+                                                                for="star2"></label>
+                                                        <input type="radio" id="star3" name="rate" value="3"/><label
+                                                                for="star3"></label>
+                                                        <input type="radio" id="star4" name="rate" value="4"/><label
+                                                                for="star4"></label>
+                                                        <input type="radio" id="star5" name="rate" value="5"/><label
+                                                                for="star5"></label>
                                                     </div>
                                                 </div>
                                             </div>

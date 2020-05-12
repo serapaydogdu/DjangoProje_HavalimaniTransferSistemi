@@ -36,8 +36,6 @@
 
                 <ul class="nav-menu">
 
-
-
                     <li class=" example nice-select" tabindex="0">
                         <div class="search-widget col-lg-8 col-md-6 header-search ">
                             <form action="/search/"  method="post" style="margin:auto;max-width:300px">
@@ -64,8 +62,8 @@
                             </form>
                         </div>
                     </li>
-
-                    <li class="menu-has-children dropdown left-sidebar"><a href="/category/{{ node.slug }}"><span class="lnr lnr-license"> </span> Filomuz </a>
+                                                                                 <!--category/{{ node.id }}/{{ node.slug }}-->
+                    <li class="menu-has-children dropdown left-sidebar"><a href="/"><span class="lnr lnr-license"> </span> Filomuz </a>
                         <ul>
 
                             {% load mptt_tags %}
@@ -92,6 +90,7 @@
                     <li><a href="/hakkimizda">Aboutus</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/references">References</a></li>
+                    <li><a href="/reservationcart/"> <i class="fa fa-car"></i></a> </li>
                     <li>
                         {% if user.id is not None %}
                             <div class="dropdown-toggle" role="button" data-toggle="dropdown" arila-expanded="true">
@@ -110,6 +109,7 @@
                             <li><a href="/logout/"><i class="fa fa-unlock-alt"></i> Logout</a></li>
                         </ul>
                     </li>
+
 
                 </ul>
             </nav><!-- #nav-menu-container -->

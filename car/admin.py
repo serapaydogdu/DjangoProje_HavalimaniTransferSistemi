@@ -16,8 +16,8 @@ class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('image_tag',)
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ['title', 'category', 'price', 'image_tag','catimg_tag', 'amount', 'capacity', 'model', 'status']
-    readonly_fields = ('image_tag','catimg_tag')
+    list_display = ['title', 'category', 'price', 'image_tag', 'amount', 'capacity', 'model', 'status']
+    readonly_fields = ('image_tag',)
     list_filter = ['status','category']
     inlines = [CarImageInline]          #yeni ürün eklerkende image galerisi ile beraber bize sunuyor.
     prepopulated_fields = {'slug': ('title',)}
