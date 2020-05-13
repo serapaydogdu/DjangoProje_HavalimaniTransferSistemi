@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17e8f21-18e4-4385-ba56-98ee872a6061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/uploads/images/2020/05/12/mercedes-e-serisi2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/2020/05/12/mercedes-e-serisi2_thumb.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/migrations/0003_reservation_reservationcar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/migrations/0004_auto_20200513_1604.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/migrations/0005_auto_20200513_1717.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/templates/Reservation_Completed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/templates/Reservation_Form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservationcart_cars.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservationcart_cars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +56,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -91,13 +93,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/reservation/templates" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Django\my_project\user\templates" />
       <recent name="C:\Django\my_project\reservation\templates" />
+      <recent name="C:\Django\my_project\user\templates" />
       <recent name="C:\Django\my_project\reservation" />
       <recent name="C:\Django\my_project\user" />
       <recent name="C:\Django\my_project\home\templates" />
@@ -240,7 +242,11 @@
       <workItem from="1589154486365" duration="3000" />
       <workItem from="1589198945676" duration="30358000" />
       <workItem from="1589247970263" duration="115000" />
-      <workItem from="1589273062428" duration="16669000" />
+      <workItem from="1589273062428" duration="17302000" />
+      <workItem from="1589302210496" duration="73000" />
+      <workItem from="1589313013027" duration="600000" />
+      <workItem from="1589330550856" duration="8803000" />
+      <workItem from="1589370291111" duration="10104000" />
     </task>
     <task id="LOCAL-00001" summary="13. videoya kadar tamamlandı. İletişim, hakkımızda,referans sayfaları oluşturuldu.">
       <created>1586638409159</created>
@@ -368,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589279520129</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Kullanıcı üye bilgilerini ve şifresini güncelleme tamamlandı.">
+      <created>1589301674394</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1589301674394</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +415,8 @@
     <MESSAGE value="25. video -&gt; User Profile ile Ek Bilgiler ve resim tamamlandı." />
     <MESSAGE value="Anasayfa Üye Paneli ve Profil Bilgileri tamamlandı." />
     <MESSAGE value="Rezervasyon seçimini ekleme, listeleme, silme işlemleri yapıldı ve car_detail slider kısmı düzeltildi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rezervasyon seçimini ekleme, listeleme, silme işlemleri yapıldı ve car_detail slider kısmı düzeltildi." />
+    <MESSAGE value="Kullanıcı üye bilgilerini ve şifresini güncelleme tamamlandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Kullanıcı üye bilgilerini ve şifresini güncelleme tamamlandı." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -410,10 +424,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589240378151" />
-    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1589279519246">
+    <state x="847" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589339328259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589279519246" />
+    <state x="847" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589339328259" />
+    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1589301672899">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589301672899" />
     <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1589240369601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -454,10 +472,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="69" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585523612884" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1589279542210">
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1589301676756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589279542210" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589301676756" />
     <state x="544" y="31" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587166711496">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

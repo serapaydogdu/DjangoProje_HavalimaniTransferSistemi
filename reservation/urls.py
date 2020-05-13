@@ -9,8 +9,7 @@ urlpatterns = [
 
     path('', views.index, name='index'),
     path('reservetocart/<int:id>', views.reservetocart, name='reservetocart'),
-    path('deletefromcart/<int:id>', views.deletefromcart, name='deletefromcart')
-
-
+    path('deletefromcart/<int:id>', views.deletefromcart, name='deletefromcart'),
+    path('reservationcar/', views.reservationcar, name='reservationcar'),
 
 ]

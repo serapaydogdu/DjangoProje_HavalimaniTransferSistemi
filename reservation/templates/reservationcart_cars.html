@@ -67,8 +67,18 @@
                                 <td class="total text-center"><strong>${{ rs.amount }}</strong></td>
                                 <td class="text-right"><a href="/reservation/deletefromcart/{{ rs.id }}" onclick="return confirm('Delete! Are you sure?')" class="main-btn icon-btn"><i class="fa fa-close"></i></a></td>
                             </tr>
+                            <tfoot>
+                            <tr>
+                                <th>TOTAL : </th>
+                                <th>${{ total }}</th>
+                            </tr>
+                            </tfoot>
                         {% endfor %}
                     </table>
+                    <div class="pull-right">
+                        <a href="/reservation/reservationcar" class="genric-btn success radius text-uppercase">Complete a Reservation</a>
+                        <br>
+                    </div>
                 </div>
             </div>
         </div>

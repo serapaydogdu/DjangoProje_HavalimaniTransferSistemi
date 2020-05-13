@@ -2,10 +2,12 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-
 # Create your views here.
-from car.models import Category
-from reservation.models import ReservationCartForm, ReservationCart
+from django.utils.crypto import get_random_string
+
+from car.models import Category, Car
+from home.models import UserProfile
+from reservation.models import ReservationCartForm, ReservationCart, Reservation, ReservationForm, ReservationCar
 
 
 def index(request):
@@ -92,3 +94,76 @@ def deletefromcart(request, id):
     ReservationCart.objects.filter(id=id).delete()
     messages.success(request, "Araç rezervasyondan silinmiştir.")
     return HttpResponseRedirect("/reservationcart")
+
+@login_required(login_url='/login')  # Check Login
+def reservationcar(request):
+    category = Category.objects.all()
+    current_user = request.user
+    reservationcart = ReservationCart.objects.filter(user_id=current_user.id)
+    total = 0
+    for rs in reservationcart:
+        total += rs.car.price + rs.quantity
+
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            #Kredi kartı bilgilerini bankaya gönder onaylanırsa devam et olacaktı sorgulasaydık.
+            data = Reservation()
+            data.first_name = form.cleaned_data['first_name']
+            data.last_name = form.cleaned_data['last_name']
+            data.phone = form.cleaned_data['phone']
+            data.address = form.cleaned_data['address']
+            data.city = form.cleaned_data['city']
+            data.country =form.cleaned_data['country']
+            data.date = form.cleaned_data['date']
+            data.take_off = form.cleaned_data['take_off']
+            data.arrive = form.cleaned_data['arrive']
+            data.user_id = current_user.id
+            data.total = total
+            data.ip = request.META.get('REMOTE_ADDR')
+            reservationcode = get_random_string(5).upper()
+            data.code = reservationcode
+            data.save()
+
+            reservationcart =ReservationCart.objects.filter(user_id=current_user.id)
+            for rs in reservationcart:
+                detail = ReservationCar()
+                detail.reservaton_id  = data.id   #reservation id  ->en son üretilen üstteki datadan gelen idyi kullanıyoruz.
+                detail.car_id         = rs.car_id
+                detail.user_id        = current_user.id
+                detail.quantity       = rs.quantity
+                detail.price          = rs.car.price
+                detail.amount         = rs.amount
+                detail.save()
+
+
+                car = Car.objects.get(id=rs.car_id)
+                car.amount -= rs.quantity
+                car.save()
+
+            ReservationCart.objects.filter(user_id=current_user.id).delete()
+            messages.success(request, "Your reservation has been completed. Thank you'")
+            return render(request, 'Reservation_Completed.html',{'reservationcode':reservationcode, 'category': category})
+
+        else:
+            messages.warning((request, form.errors))
+            return HttpResponseRedirect("/reservation/reservationcar")
+
+    form = ReservationForm()
+    profile = UserProfile.objects.get(user_id=current_user.id)
+    context = {'reservationcart': reservationcart,
+               'category': category,
+               'total': total,
+               'form': form,
+               'profile': profile,
+               }
+    return render(request, 'Reservation_Form.html', context)
+
+
+
+
+
+
+
+
+
