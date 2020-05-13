@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17e8f21-18e4-4385-ba56-98ee872a6061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reservation/migrations/0003_reservation_reservationcar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/migrations/0004_auto_20200513_1604.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/migrations/0005_auto_20200513_1717.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/templates/Reservation_Completed.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/templates/Reservation_Form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/migrations/0006_auto_20200513_1835.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/migrations/0007_delete_reservationcart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/car_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/car_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/Reservation_Completed.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/Reservation_Completed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/Reservation_Form.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/Reservation_Form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/templates/reservationcart_cars.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservationcart_cars.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
@@ -246,7 +248,8 @@
       <workItem from="1589302210496" duration="73000" />
       <workItem from="1589313013027" duration="600000" />
       <workItem from="1589330550856" duration="8803000" />
-      <workItem from="1589370291111" duration="10104000" />
+      <workItem from="1589370291111" duration="18395000" />
+      <workItem from="1589392623550" duration="911000" />
     </task>
     <task id="LOCAL-00001" summary="13. videoya kadar tamamlandı. İletişim, hakkımızda,referans sayfaları oluşturuldu.">
       <created>1586638409159</created>
@@ -381,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589301674394</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="30. video-&gt;rezervasyon yapma ve tamamlama">
+      <created>1589382250518</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589382250519</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +426,8 @@
     <MESSAGE value="Anasayfa Üye Paneli ve Profil Bilgileri tamamlandı." />
     <MESSAGE value="Rezervasyon seçimini ekleme, listeleme, silme işlemleri yapıldı ve car_detail slider kısmı düzeltildi." />
     <MESSAGE value="Kullanıcı üye bilgilerini ve şifresini güncelleme tamamlandı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Kullanıcı üye bilgilerini ve şifresini güncelleme tamamlandı." />
+    <MESSAGE value="30. video-&gt;rezervasyon yapma ve tamamlama" />
+    <option name="LAST_COMMIT_MESSAGE" value="30. video-&gt;rezervasyon yapma ve tamamlama" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -424,14 +435,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589240378151" />
-    <state x="847" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589339328259">
+    <state x="847" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589389952612">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="847" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589339328259" />
-    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1589301672899">
+    <state x="847" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589389952612" />
+    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1589382248659">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589301672899" />
+    <state x="538" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589382248659" />
     <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1589240369601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -472,10 +483,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="69" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585523612884" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1589301676756">
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1589382253000">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589301676756" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589382253000" />
     <state x="544" y="31" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587166711496">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -19,7 +19,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 from home import views
-from reservation import views as reservationviews
 
 urlpatterns = [
     path('', include('home.urls')),   #hiçbir şey yazılmazsa sitede boşa attık. yinede gitsin home home dersekte çalışır.
@@ -40,7 +39,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout_view'),
     path('login/', views.login_view, name='login_view'),
     path('signup/', views.signup_view, name='signup_view'),
-    path('reservationcart/', reservationviews.reservationcart, name='reservationcart')
+    #path('reservationcart/', reservationviews.reservationcart, name='reservationcart')
 
 
 ]

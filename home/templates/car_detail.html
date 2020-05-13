@@ -110,30 +110,16 @@
                     <p><strong> Price : {{ car.price }} / Price of One Person </strong></p>
 
                     <div class="car-btns">
-                        <form action="/reservation/reservetocart/{{ car.id }}" method="post">
+                        <form action="/reservation/reservationform/{{ car.id }}" method="post">
                             {% csrf_token %}
                             <div class="qty-input">
-
                                 <span class="text-uppercase"> Kişi Sayısı:</span>
-                                <input name="quantity" class="input" type="number" min="0" max="{{ car.amount }}"
+                                <input name="quantity" class="input" type="number" min="1" max="{{ car.amount }}"
                                        value="1">
-                                <br>
-                                <div>
-                                    <div class="col-md-10 left-padding">
-                                        <div class="input-group dates-wrap">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><span
-                                                        class="lnr lnr-calendar-full"></span></span>
-                                            </div>
-                                            <input id="datepicker" name="date" class="dates form-control"
-                                                   placeholder="Date & Time" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                             <br>
-                            <button type="submit" class="primary-btn"><i class="fa fa-car"></i> Add Car for Transfer
+
+                            <button type="submit" class="primary-btn"><i class="fa fa-car"></i> RESERVE
                             </button>
                         </form>
                     </div>

@@ -1,11 +1,11 @@
 {% extends "homebase.html" %}
 
-{% block title %} Reservation Cart {% endblock %}
+{% block title %} Reservation Form {% endblock %}
 {% block keywords %} {{ categorydata.keywords }} {% endblock %}
 {% block description %} {{ categorydata.description }} {% endblock %}
 
 {% block head %}
-    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}' />
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
 {% endblock %}
 
 {% block sidebar %}{% include "sidebar.html" %}{% endblock %}
@@ -17,11 +17,12 @@
         <div class="overlay overlay-bg"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="about-content col-lg-12" >
+                <div class="about-content col-lg-12">
                     <h1 class="text-white">
                         GetTransfer
                     </h1>
-                    <p class="text-white link-nav"><a href="/"> Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="/reservation/reservationcar"> Reservation Details  </a></p>
+                    <p class="text-white link-nav"><a href="/"> Home </a> <span class="lnr lnr-arrow-right"></span> <a
+                            href="/reservation/reservationform/{{ id }}"> Reservation Form </a></p>
                 </div>
             </div>
         </div>
@@ -31,8 +32,8 @@
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="/"> Home >>  </a></li>
-                <li><a href="/reservation/reservationcar"> Reservation Details </a></li>
+                <li><a href="/"> Home >> </a></li>
+                <li><a href="/reservation/reservationform/{{ id }}"> Reservation Form </a></li>
             </ul>
         </div>
     </div>
@@ -42,31 +43,37 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="" method="post">
+                    <form action="/reservation/reservationcar/{{ id }}" method="post">
                         {% csrf_token %}
                         <div class="col-md-8">
                             <div>
-
-
                                 <div class="section-title">
                                     <h3 class="title">Reservation Details</h3>
                                 </div>
 
                                 <p>
+                                    Total Price:{{ total }}
+                                </p>
+
+                                <p>
                                     <label for="id_first_name">First Name :</label>
-                                    <input type="text" name="first_name" value="{{ user.first_name }}" class="input" maxlength="20" >
+                                    <input type="text" name="first_name" value="{{ user.first_name }}" class="input"
+                                           maxlength="20">
                                 </p>
                                 <p>
                                     <label for="id_last_name">Last Name :</label>
-                                    <input type="text" name="last_name" value="{{ user.last_name }}" class="input" maxlength="20" >
+                                    <input type="text" name="last_name" value="{{ user.last_name }}" class="input"
+                                           maxlength="20">
                                 </p>
                                 <p>
                                     <label for="id_phone">Phone :</label>
-                                    <input type="text" name="last_name" value="{{ profile.phone }}" class="input" id="id_phone" maxlength="20" >
+                                    <input type="text" name="phone" value="{{ profile.phone }}" class="input"
+                                           id="id_phone" maxlength="20">
                                 </p>
-                                  <p>
+                                <p>
                                     <label for="id_address">Address :</label>
-                                    <input type="text" name="address" value="{{ profile.address }}" class="input" id="id_address" maxlength="20" >
+                                    <input type="text" name="address" value="{{ profile.address }}" class="input"
+                                           id="id_address" maxlength="20">
                                 </p>
                                 <p>
                                     <label for="id_city">City :</label>
@@ -82,11 +89,13 @@
                                 </p>
                                 <p>
                                     <label for="id_first_name">Country :</label>
-                                    <input type="text" name="country" id="id_country" value="{{ profile.country }}" class="input" maxlength="20" >
+                                    <input type="text" name="country" id="id_country" value="{{ profile.country }}"
+                                           class="input" maxlength="20">
                                 </p>
                                 <p class="col-md-8">
                                     <label for="id_date">Date :</label>
-                                    <input type="text" name="country" id="datepicker" placeholder="Date & Time" class="dates form-control">
+                                    <input type="text" name="date" id="datepicker" placeholder="Date & Time"
+                                           class="dates form-control">
                                 </p>
                                 <p>
                                     <label for="id_take_off">Take-off :</label>
@@ -114,7 +123,9 @@
 
                         </div>
 
-
+                        <input name="price"  type="hidden" value="{{ total }}">
+                        <input name="quantity"  type="hidden" value="{{ quantity }}">
+                        <!--
                         <div class="col-md-4">
                             <div>
                                 <div class="section-title">
@@ -142,6 +153,7 @@
                                 </p>
                             </div>
                         </div>
+                        -->
 
                         <div class="pull-right">
                             <button type="submit" class="primary-btn">Complete Reservation</button>
