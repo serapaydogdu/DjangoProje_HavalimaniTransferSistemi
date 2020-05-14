@@ -9,7 +9,7 @@ from django.shortcuts import render
 # Create your views here.
 from car.models import Car, Category, Images, Comment
 from home.forms import SearchForm, SignUpForm
-from home.models import Setting, ContactFormu, ContactFormMessage
+from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile
 
 
 def index(request):       #setting ayarlarını getirecek . artık sitede görünecekler title ı vs.
@@ -164,6 +164,14 @@ def signup_view(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
+
+            #Create data in profile table for user
+            current_user = request.user
+            data = UserProfile()
+            data.user_id = current_user.id
+            data.image = "images/user/user.png"
+            data.save()
+            messages.success(request, "Hoş Geldiniz.. Sitemize başarılı bir şekilde üye oldunuz. İyi yolculuklar dileriz.")
             return HttpResponseRedirect('/')
 
     form = SignUpForm()

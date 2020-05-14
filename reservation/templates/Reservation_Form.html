@@ -38,14 +38,13 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" >
 
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <form action="/reservation/reservationcar/{{ id }}" method="post">
+                    <form action="/reservation/reservationcar/{{ id }}" method="post" class="col-md-12">
                         {% csrf_token %}
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div>
                                 <div class="section-title">
                                     <h3 class="title">Reservation Details</h3>
@@ -57,27 +56,23 @@
 
                                 <p>
                                     <label for="id_first_name">First Name :</label>
-                                    <input type="text" name="first_name" value="{{ user.first_name }}" class="input"
-                                           maxlength="20">
+                                    <input type="text" name="first_name" value="{{ user.first_name }}" class="input-group" maxlength="20">
                                 </p>
                                 <p>
                                     <label for="id_last_name">Last Name :</label>
-                                    <input type="text" name="last_name" value="{{ user.last_name }}" class="input"
-                                           maxlength="20">
+                                    <input type="text" name="last_name" value="{{ user.last_name }}" class="input-group" maxlength="20">
                                 </p>
                                 <p>
                                     <label for="id_phone">Phone :</label>
-                                    <input type="text" name="phone" value="{{ profile.phone }}" class="input"
-                                           id="id_phone" maxlength="20">
+                                    <input type="text" name="phone" value="{{ profile.phone }}" class="input-group" id="id_phone" maxlength="20">
                                 </p>
                                 <p>
                                     <label for="id_address">Address :</label>
-                                    <input type="text" name="address" value="{{ profile.address }}" class="input"
-                                           id="id_address" maxlength="20">
+                                    <input type="text" name="address" value="{{ profile.address }}" class="input-group" id="id_address" maxlength="20">
                                 </p>
                                 <p>
                                     <label for="id_city">City :</label>
-                                    <select name="city" class="input" id="id_city">
+                                    <select name="city" class="input-group" id="id_city">
                                         <option value="{{ profile.city }}" selected>{{ profile.city }}</option>
                                         <option value="İstanbul">İstanbul</option>
                                         <option value="Ankara">Ankara</option>
@@ -89,17 +84,15 @@
                                 </p>
                                 <p>
                                     <label for="id_first_name">Country :</label>
-                                    <input type="text" name="country" id="id_country" value="{{ profile.country }}"
-                                           class="input" maxlength="20">
+                                    <input type="text" name="country" id="id_country" value="{{ profile.country }}" class="input-group" maxlength="20">
                                 </p>
-                                <p class="col-md-8">
+                                <p>
                                     <label for="id_date">Date :</label>
-                                    <input type="text" name="date" id="datepicker" placeholder="Date & Time"
-                                           class="dates form-control">
+                                    <input type="text" name="date" id="datepicker" placeholder="Date & Time" class="dates form-control input-group">
                                 </p>
                                 <p>
                                     <label for="id_take_off">Take-off :</label>
-                                    <select name="take_off" class="input" id="id_take_off">
+                                    <select name="take_off" class="input-group" id="id_take_off">
                                         <option value="{{ profile.take_off }}" selected>{{ profile.take_off }}</option>
                                         <option value="Havalimani">Havalimani</option>
                                         <option value="Havalimani-*">Havalimani-*</option>
@@ -110,7 +103,7 @@
                                 </p>
                                 <p>
                                     <label for="id_arrive">Arrive :</label>
-                                    <select name="arrive" class="input" id="id_arrive">
+                                    <select name="arrive" class="input-group" id="id_arrive">
                                         <option value="{{ profile.arrive }}" selected>{{ profile.arrive }}</option>
                                         <option value="Havalimani">Havalimani</option>
                                         <option value="Havalimani-*">Havalimani-*</option>
@@ -125,42 +118,41 @@
 
                         <input name="price"  type="hidden" value="{{ total }}">
                         <input name="quantity"  type="hidden" value="{{ quantity }}">
-                        <!--
-                        <div class="col-md-4">
+
+                        <div class="col-md-6">
                             <div>
                                 <div class="section-title">
                                     <h4 class="title">Payment Information</h4>
                                 </div>
                                 <p>
                                     <label for="id_first_name">Total :</label>
-                                    <input type="text" name="total" readonly value="${{ total }}" class="input">
+                                    <input type="text" name="total" readonly value="${{ total }}" class="input-group">
                                 </p>
                                 <p>
                                     <label for="id_first_name">Credit Card Holder :</label>
-                                    <input type="text" name="holder" value="" class="input">
+                                    <input type="text" name="holder" value="" class="input-group">
                                 </p>
                                 <p>
                                     <label for="id_first_name">Credit Card Number :</label>
-                                    <input type="text" name="number" value="" class="input">
+                                    <input type="text" name="number" value="" class="input-group">
                                 </p>
                                 <p>
                                     <label for="id_first_name">Credit Exp Date/Year :</label>
-                                    <input type="text" name="ecpdate" placeholder="mm/yy" class="input">
+                                    <input type="text" name="ecpdate" placeholder="mm/yy" class="input-group">
                                 </p>
                                 <p>
                                     <label for="id_first_name">Security Number :</label>
-                                    <input type="text" name="secnumber" value="" class="input">
+                                    <input type="text" name="secnumber" value="" class="input-group">
                                 </p>
                             </div>
                         </div>
-                        -->
+
 
                         <div class="pull-right">
                             <button type="submit" class="primary-btn">Complete Reservation</button>
                         </div>
 
                     </form>
-                </div>
             </div>
         </div>
     </div>

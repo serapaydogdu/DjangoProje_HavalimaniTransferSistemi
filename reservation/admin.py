@@ -17,9 +17,9 @@ class ReservationCarline(admin.TabularInline):
     extra = 0
 
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'phone', 'date', 'take_off', 'arrive', 'city', 'price', 'status']
+    list_display = ['first_name', 'last_name', 'phone','city', 'date', 'take_off', 'arrive',  'price','adminnote', 'status']
     list_filter = ['status']
-    readonly_fields = ('user','first_name','last_name','address','city','country','date','phone','ip','price')
+    readonly_fields = ('user','first_name','last_name','address','city','country','date','phone','ip','price','date', 'take_off', 'arrive','quantity')
     can_delete = False
     inlines = [ReservationCarline]  #aynı sayfada göster rezerv. a ait ürünleri
 

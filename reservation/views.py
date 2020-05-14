@@ -16,88 +16,6 @@ def index(request):
     return HttpResponse("Reservation App")  # döngümün tamamlanıp tamamlanmadığını bu şekilde kontrol edebilirim.
 
 
-#@login_required(login_url='/login')  # Check Login
-#def reservetocart(request, id):
-#    url = request.META.get('HTTP_REFERER')  # get last url
-#    current_user = request.user  # access user session information
-    # **********************************************
-#    checkcar = ReservationCart.objects.filter(car_id=id)  # araç seçildi mi sorgusu sepette var mı
-#    if checkcar:
-#        control = 1  # varsa
-#    else:
-#        control = 0  # yoksa
-
-#    if request.method == 'POST':  # form post edildiyse  ÜRÜN DETAY SAYFASINDAN GELDİYSE
-#        form = ReservationCartForm(request.POST)
-#        if form.is_valid():
-#            if control == 1:  # ürün varsa güncelle
-#                try:
-#                    data = ReservationCart.objects.get(car_id=id)  # modelle bağlantı kurduk.
-#                    data.quantity += form.cleaned_data['quantity']
-#                    data.date = form.cleaned_data['date']
-#                    data.save()  # veritabanına kaydet
-#                    messages.success(request, "Araç transfer için rezerve seçilmiştir.")
-#                except:
-#                    messages.warning(request,
-#                                     'Aracın transfer için rezerve seçiminde hata oluştu! Lütfen kontrol ediniz.')
-#                    return HttpResponseRedirect(url)
-#            else:  # ürün yokda ekle
-#                try:
-#                    data = ReservationCart()  # modelle bağlantı kurduk.
-##                    data.user_id = current_user.id
-#                    data.car_id = id
-#                    data.quantity = form.cleaned_data['quantity']
-#                    data.date = form.cleaned_data['date']
-#                    data.save()  # veritabanına kaydet
-#                    messages.success(request, "Araç transfer için rezerve seçilmiştir.")
-#                    return HttpResponseRedirect(url)
-#                except:
-#                    messages.warning(request,
-#                                     'Aracın transfer için rezerve seçiminde hata oluştu! Lütfen kontrol ediniz.')
-#                    return HttpResponseRedirect(url)
-#        else:
-#            messages.warning(request, 'Aracın transfer için rezerve seçiminde hata oluştu! Lütfen kontrol ediniz.')
-#
-#    else:  # ÜRÜN DİREK EKLE BUTONUNA BASILDIYSA
-#        if control == 1:  # ürün varsa güncelle
-#            data = ReservationCart.objects.get(car_id=id)  # modelle bağlantı kurduk.
-#            data.quantity += 1
-#            data.save()  # veritabanına kaydet
-#            messages.success(request, "Araç transfer için rezerve seçilmiştir.")
-##        else:  # ürün yokda ekle
-#            data = ReservationCart()  # model ile bağlantı kurduk.
-#            data.user_id = current_user.id
-#            data.car_id = id
-#            data.quantity = 1
-#            data.save()  # veritabanına kaydet
-#            messages.success(request, "Araç transfer için seçilmiştir.")
-#            return HttpResponseRedirect(url)
-#
-#    return HttpResponseRedirect(url)
-
-
-#@login_required(login_url='/login')  # Check Login
-#def reservationcart(request):
-#    current_user = request.user
-#    reservationcart = ReservationCart.objects.filter(user_id=current_user.id)
-#    total = 0
-#    for rs in reservationcart:
-#        total += rs.car.price * rs.quantity
-#
-#    context = {'reservationcart': reservationcart,
-#               'category': category,
-#               'total': total,
-#               }
-##    return render(request, 'reservationcart_cars.html', context)
-
-
-#@login_required(login_url='/login')  # Check Login
-#def deletefromcart(request, id):
-#    ReservationCart.objects.filter(id=id).delete()
-#    messages.success(request, "Araç rezervasyondan silinmiştir.")
-#    return HttpResponseRedirect("/reservationcart")
-
-
 @login_required(login_url='/login')  # Check Login
 def reservationcar(request, id):
     url = request.META.get('HTTP_REFERER')  # get last url
@@ -165,36 +83,117 @@ def reservationcompleted(request, id):
 
 
 #@login_required(login_url='/login')  # Check Login
+#def reservetocart(request, id):
+#    url = request.META.get('HTTP_REFERER')  # get last url
+#    current_user = request.user  # access user session information
+# **********************************************
+#    checkcar = ReservationCart.objects.filter(car_id=id)  # araç seçildi mi sorgusu sepette var mı
+#    if checkcar:
+#        control = 1  # varsa
+#    else:
+#        control = 0  # yoksa
+
+#    if request.method == 'POST':  # form post edildiyse  ÜRÜN DETAY SAYFASINDAN GELDİYSE
+#        form = ReservationCartForm(request.POST)
+#        if form.is_valid():
+#            if control == 1:  # ürün varsa güncelle
+#                try:
+#                    data = ReservationCart.objects.get(car_id=id)  # modelle bağlantı kurduk.
+#                    data.quantity += form.cleaned_data['quantity']
+#                    data.date = form.cleaned_data['date']
+#                    data.save()  # veritabanına kaydet
+#                    messages.success(request, "Araç transfer için rezerve seçilmiştir.")
+#                except:
+#                    messages.warning(request,
+#                                     'Aracın transfer için rezerve seçiminde hata oluştu! Lütfen kontrol ediniz.')
+#                    return HttpResponseRedirect(url)
+#            else:  # ürün yokda ekle
+#                try:
+#                    data = ReservationCart()  # modelle bağlantı kurduk.
+#                    data.user_id = current_user.id
+#                    data.car_id = id
+#                    data.quantity = form.cleaned_data['quantity']
+#                    data.date = form.cleaned_data['date']
+#                    data.save()  # veritabanına kaydet
+#                    messages.success(request, "Araç transfer için rezerve seçilmiştir.")
+#                    return HttpResponseRedirect(url)
+#                except:
+#                    messages.warning(request,
+#                                     'Aracın transfer için rezerve seçiminde hata oluştu! Lütfen kontrol ediniz.')
+#                    return HttpResponseRedirect(url)
+#        else:
+#            messages.warning(request, 'Aracın transfer için rezerve seçiminde hata oluştu! Lütfen kontrol ediniz.')
+#
+#    else:  # ÜRÜN DİREK EKLE BUTONUNA BASILDIYSA
+#        if control == 1:  # ürün varsa güncelle
+#            data = ReservationCart.objects.get(car_id=id)  # modelle bağlantı kurduk.
+#            data.quantity += 1
+#            data.save()  # veritabanına kaydet
+#            messages.success(request, "Araç transfer için rezerve seçilmiştir.")
+#        else:  # ürün yokda ekle
+#            data = ReservationCart()  # model ile bağlantı kurduk.
+#            data.user_id = current_user.id
+#            data.car_id = id
+#            data.quantity = 1
+#            data.save()  # veritabanına kaydet
+#            messages.success(request, "Araç transfer için seçilmiştir.")
+#            return HttpResponseRedirect(url)
+#
+#    return HttpResponseRedirect(url)
+
+
+#@login_required(login_url='/login')  # Check Login
+#def reservationcart(request):
+#    current_user = request.user
+#    reservationcart = ReservationCart.objects.filter(user_id=current_user.id)
+#    total = 0
+#    for rs in reservationcart:
+#        total += rs.car.price * rs.quantity
+#
+#    context = {'reservationcart': reservationcart,
+#               'category': category,
+#               'total': total,
+#               }
+#    return render(request, 'reservationcart_cars.html', context)
+
+
+#@login_required(login_url='/login')  # Check Login
+#def deletefromcart(request, id):
+#    ReservationCart.objects.filter(id=id).delete()
+#    messages.success(request, "Araç rezervasyondan silinmiştir.")
+#    return HttpResponseRedirect("/reservationcart")
+
+
+#@login_required(login_url='/login')  # Check Login
 #def reservationcarold(request):
- #   category = Category.objects.all()
+#   category = Category.objects.all()
 #    current_user = request.user
 #    reservationcart = ReservationCart.objects.filter(user_id=current_user.id)
 #    total = 0
 #    for rs in reservationcart:
 #        total += rs.car.price + rs.quantity
 #
- #   if request.method == 'POST':
- #       form = ReservationForm(request.POST)
+#   if request.method == 'POST':
+#       form = ReservationForm(request.POST)
 #        if form.is_valid():
 #            # Kredi kartı bilgilerini bankaya gönder onaylanırsa devam et olacaktı sorgulasaydık.
 #            data = Reservation()
- #           data.first_name = form.cleaned_data['first_name']
-##            data.last_name = form.cleaned_data['last_name']
+#            data.last_name = form.cleaned_data['last_name']
 #            data.phone = form.cleaned_data['phone']
 #            data.address = form.cleaned_data['address']
 #            data.city = form.cleaned_data['city']
 #            data.country = form.cleaned_data['country']
 #            data.date = form.cleaned_data['date']
-####            data.take_off = form.cleaned_data['take_off']
-#####            data.arrive = form.cleaned_data['arrive']
+#           data.take_off = form.cleaned_data['take_off']
+#            data.arrive = form.cleaned_data['arrive']
 #            data.user_id = current_user.id
 #            data.total = total
 #            data.ip = request.META.get('REMOTE_ADDR')
- #           reservationcode = get_random_string(5).upper()
+#           reservationcode = get_random_string(5).upper()
 #            data.code = reservationcode
- #           data.save()
+#           data.save()
 
- #           reservationcart = ReservationCart.objects.filter(user_id=current_user.id)
+#           reservationcart = ReservationCart.objects.filter(user_id=current_user.id)
 #            for rs in reservationcart:
 #                detail = ReservationCar()
 #                detail.reservaton_id = data.id  # reservation id  ->en son üretilen üstteki datadan gelen idyi kullanıyoruz.

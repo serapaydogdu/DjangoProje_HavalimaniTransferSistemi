@@ -25,6 +25,16 @@
         </div>
     </section>
     <!-- End banner Area -->
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
     <!-- Start blog-posts Area -->
     <section class="section-gap">
         <div class="container">
