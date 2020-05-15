@@ -26,6 +26,15 @@
     </section>
     <!-- End banner Area -->
 
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="/"> Home >>  </a></li>
+                <li><a href="/user"> My Profile  </a></li>
+            </ul>
+        </div>
+    </div>
+
     {% if messages %}
         {% for message in messages %}
             <div class="alert alert-{{ message.tags }}" role="alert">

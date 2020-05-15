@@ -1,0 +1,89 @@
+{% extends "homebase.html" %}
+
+{% block title %} User Comments {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}    <!--bu homebase deki alana yazılırsa kullanıcı değiştiremez. adminden değişebilecek hale getirdik.-->
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}' />
+{% endblock %}
+
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+{% block content %}
+    <!-- start banner Area -->
+    <section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12" >
+                    <h1 class="text-white">
+                        GetTransfer
+                    </h1>
+                    <p class="text-white link-nav"><a href="/"> Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="/comments"> User Comments </a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="/"> Home >>  </a></li>
+                <li><a href="/user/comments"> My Comments  </a></li>
+            </ul>
+        </div>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Start blog-posts Area -->
+    <section class="section-gap">
+        <div class="container">
+            <div class="row ">
+
+                <div class="col-md-3 ">
+                    {% include "user_panel.html" %}
+                </div>
+
+                <div class="col-md-9 single-widget ">
+                    <div class="text-uppercase"><h4><font color="#8a2be2"> User Comment List </font></h4></div>
+                    <hr>
+                    <table class="table">
+                        <tr>
+                            <th class="text-left">Car</th>
+                            <th class="text-left">Rate</th>
+                            <th class="text-left">Subject</th>
+                            <th class="text-left">Comment</th>
+                            <th class="text-left">Status</th>
+                            <th class="text-left">Date</th>
+                            <th class="text-left">Detail</th>
+                        </tr>
+                        {% for rs in comments %}
+                            <tr>
+                                <td class="text-left">
+                                    <a href="/car/{{ rs.car_id }}/{{ rs.car.slug }}">
+                                        <strong>{{ rs.car.title }}</strong>
+                                    </a>
+                                </td>
+                                <td class="text-left">{{ rs.rate }}</td>
+                                <td class="text-left">{{ rs.subject }}</td>
+                                <td class="text-left">{{ rs.comment }}</td>
+                                <td class="text-left">{{ rs.status }}</td>
+                                <td class="text-left">{{ rs.create_at }}</td>
+                                <td class="text-left"><a class="genric-btn danger radius text-uppercase" href="/user/deletecomment/{{ rs.id }}" onclick="return confirm('Will be Delete! Are you sure?')"> Delete </a> </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End blog-posts Area -->
+
+{% endblock %}
