@@ -8,9 +8,11 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from car.models import Category, Comment
 from home.models import UserProfile
+from reservation.models import Reservation, ReservationCar
 from user.forms import UserUpdateForm, ProfileUpdateForm
 
 
+@login_required(login_url='/login')  # Check Login
 def index(request):
     category = Category.objects.all()
     current_user = request.user  # Access User session information
@@ -22,6 +24,7 @@ def index(request):
                }
     return render(request, 'user_profile.html',context)
 
+@login_required(login_url='/login')  # Check Login
 def user_update(request):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user) #request.user is user data.
@@ -42,6 +45,7 @@ def user_update(request):
                    }
         return render(request, 'user_update.html', context)
 
+@login_required(login_url='/login')  # Check Login
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -66,7 +70,7 @@ def comments(request):
 
     category = Category.objects.all()
     current_user = request.user
-    comments = Comment.objects.filter(user_id = current_user.id)
+    comments = Comment.objects.filter(user_id=current_user.id)
     context = {'category': category,
                'comments': comments,
                }
@@ -78,3 +82,27 @@ def deletecomment(request,id):
     Comment.objects.filter(id=id, user_id=current_user.id).delete() # başkasının kullanıcı değilse silmemesi ve istenen yorumun id uyuşaması halinde silinmesi sağlandı.
     messages.success(request, 'Comment deleted..')
     return HttpResponseRedirect('/user/comments')
+
+@login_required(login_url='/login')  # Check Login
+def reservations(request):
+    category = Category.objects.all()
+    current_user = request.user
+    reservations = Reservation.objects.filter(user_id=current_user.id)
+    context = {'category': category,
+               'reservations': reservations,
+               }
+    #return HttpResponse("Rezervasyon Listesi")
+    return render(request, "user_reservations.html", context)
+
+@login_required(login_url='/login')  # Check Login
+def reservationdetail(request,id):
+    category = Category.objects.all()
+    current_user = request.user
+    reservation = Reservation.objects.get(user_id=current_user.id, id=id)   #güvenlik açığını önlemek için..
+    reservationitems = ReservationCar.objects.filter(reservation_id=id)
+    context = {'category': category,
+               'reservation': reservation,
+               'reservationitems': reservationitems,
+               }
+    #return HttpResponse(str(id))
+    return render(request, "user_reservation_detail.html", context)

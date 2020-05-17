@@ -7,7 +7,7 @@ from django.utils.crypto import get_random_string
 
 from car.models import Category, Car
 from home.models import UserProfile
-from reservation.models import Reservation, ReservationForm
+from reservation.models import Reservation, ReservationForm, ReservationCar
 
 
 #from reservation.models import ReservationCartForm, ReservationCart,
@@ -42,6 +42,20 @@ def reservationcar(request, id):
             reservationcode = get_random_string(5).upper()
             data.code = reservationcode
             data.save()
+
+            detail = ReservationCar()
+            detail.reservation = data
+            detail.car_id = id
+            detail.user_id = current_user.id
+            detail.quantity = car.amount
+            detail.price = car.price
+            detail.amount = car.amount
+            detail.date = form.cleaned_data['date']
+            detail.save()
+            car = Car.objects.get(id=id)
+            car.amount -= 1
+            car.save()
+
             messages.success(request, "Your reservation has been completed. Thank you'")
             return HttpResponseRedirect("/reservation/reservationcompleted/"+str(data.id))
         else:

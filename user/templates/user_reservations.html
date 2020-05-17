@@ -1,0 +1,95 @@
+{% extends "homebase.html" %}
+
+{% block title %} Reservation List {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}    <!--bu homebase deki alana yazılırsa kullanıcı değiştiremez. adminden değişebilecek hale getirdik.-->
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}' />
+{% endblock %}
+
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+{% block content %}
+    <!-- start banner Area -->
+    <section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12" >
+                    <h1 class="text-white">
+                        GetTransfer
+                    </h1>
+                    <p class="text-white link-nav"><a href="/"> Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="/user/reservations"> User Reservations </a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->
+
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="/"> Home >>  </a></li>
+                <li><a href="/user/reservations"> My Reservations  </a></li>
+            </ul>
+        </div>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+    <!-- Start blog-posts Area -->
+    <section class="section-gap">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3 ">
+
+                    {% include "user_panel.html" %}
+
+                </div>
+                <div class="col-md-9 single-widget ">
+                    <div class="text-uppercase"><h4><font color="#8a2be2"> User Reservation List </font></h4></div>
+                    <hr>
+
+                    <table class="table">
+
+                        <tr>
+                            <th class="text-left">Id</th>
+                            <th class="text-left">First Name</th>
+                            <th class="text-left">Last Name </th>
+                            <th class="text-left">Price</th>
+                            <th class="text-left">Status</th>
+                            <th class="text-left">Date</th>
+                            <th class="text-left">Take-off</th>
+                            <th class="text-left">Arrive</th>
+                            <th class="text-left">Detail</th>
+                        </tr>
+                        {% for rs in reservations %}
+                            <tr>
+                                <td class="text-left">{{ rs.id }}</td>
+                                <td class="text-left">{{ rs.first_name }}</td>
+                                <td class="text-left">{{ rs.last_name }}</td>
+                                <td class="text-left">{{ rs.price }}</td>
+                                <td class="text-left">{{ rs.status }}</td>
+                                <td class="text-left">{{ rs.date }}</td>
+                                <td class="text-left">{{ rs.take_off }}</td>
+                                <td class="text-left">{{ rs.arrive }}</td>
+                                <td class="text-left"><a class="genric-btn danger radius text-uppercase" href="/user/reservationdetail/{{ rs.id }}">Detay</a></td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End blog-posts Area -->
+
+{% endblock %}
