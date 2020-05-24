@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17e8f21-18e4-4385-ba56-98ee872a6061" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/migrations/0007_faq.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0008_auto_20200519_1912.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0009_auto_20200519_1916.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0010_faq_ordernumber.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/faq.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/2020/05/19/airport-shuttle-car-transportation-512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/2020/05/19/airport-shuttle-car-transportation-512_thumb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/2020/05/19/airport_shuttle_car_transportation_512_zgh_icon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/2020/05/19/airport_shuttle_car_transportation_512_zgh_icon_thumb.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/Mercedes_E_Serisi3_t2AkuGW.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/airport_shuttle_car_transportation_512_zgh_icon_8OkzpSp.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservationcart_cars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +86,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -271,7 +254,15 @@
       <workItem from="1589714292499" duration="5648000" />
       <workItem from="1589733403735" duration="2007000" />
       <workItem from="1589744693899" duration="65000" />
-      <workItem from="1589894915622" duration="8763000" />
+      <workItem from="1589894915622" duration="8902000" />
+      <workItem from="1589913851144" duration="225000" />
+      <workItem from="1590070061758" duration="1252000" />
+      <workItem from="1590238347134" duration="61000" />
+      <workItem from="1590238711241" duration="813000" />
+      <workItem from="1590248069906" duration="2090000" />
+      <workItem from="1590269992145" duration="70000" />
+      <workItem from="1590282796070" duration="741000" />
+      <workItem from="1590320504198" duration="5421000" />
     </task>
     <task id="LOCAL-00001" summary="13. videoya kadar tamamlandı. İletişim, hakkımızda,referans sayfaları oluşturuldu.">
       <created>1586638409159</created>
@@ -441,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589735377265</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="36. video -&gt; Sıkça Sorulan Sorular Accordion  menü tamamlandı.">
+      <created>1589908353754</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1589908353755</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +479,8 @@
     <MESSAGE value="Üye ekleme sırasında otomatik profil oluşturma yapıldı.  -&gt; video 26,5" />
     <MESSAGE value="33. video -&gt; Üye yorumlarını listeleme ve silme işlemleri tamamlandı." />
     <MESSAGE value="32. video -&gt; Üye rezervasyon listesi ve rezervasyon detayı tamamlandı." />
-    <option name="LAST_COMMIT_MESSAGE" value="32. video -&gt; Üye rezervasyon listesi ve rezervasyon detayı tamamlandı." />
+    <MESSAGE value="36. video -&gt; Sıkça Sorulan Sorular Accordion  menü tamamlandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="36. video -&gt; Sıkça Sorulan Sorular Accordion  menü tamamlandı." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -493,14 +492,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="847" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589389952612" />
-    <state x="682" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1589735375251">
+    <state x="682" y="38" width="724" height="750" key="CommitChangelistDialog2" timestamp="1589908351562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="682" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589735375251" />
-    <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1589744756520">
+    <state x="682" y="38" width="724" height="750" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589908351562" />
+    <state x="579" y="180" key="FileChooserDialogImpl" timestamp="1590238406444">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="579" y="180" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589744756520" />
+    <state x="579" y="180" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590238406444" />
     <state width="910" height="261" key="GridCell.Tab.0.bottom" timestamp="1587860221128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -537,10 +536,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="69" y="25" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585523612884" />
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1589735380664">
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2" timestamp="1589908377852">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589735380664" />
+    <state x="361" y="149" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589908377852" />
     <state x="544" y="31" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587166711496">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
