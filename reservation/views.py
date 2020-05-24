@@ -33,6 +33,7 @@ def reservationcar(request, id):
             data.city = form.cleaned_data['city']
             data.country = form.cleaned_data['country']
             data.date = form.cleaned_data['date']
+            data.time = form.cleaned_data['time']
             data.quantity = form.cleaned_data['quantity']
             data.take_off = form.cleaned_data['take_off']
             data.arrive = form.cleaned_data['arrive']

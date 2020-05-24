@@ -6,30 +6,6 @@ from django.forms import ModelForm
 from car.models import Car
 
 
-#class ReservationCart(models.Model):
-#    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-#    car = models.ForeignKey(Car, on_delete=models.SET_NULL, null=True)
-#   quantity = models.IntegerField()
-#   date = models.DateTimeField(blank=True)
-
-#   def __str__(self):
-#       return self.car.title
-
-#   @property
-#    def amount(self):
-#        return (self.quantity * self.car.price)
-
-#   @property
-#    def price(self):
-#        return (self.car.price)
-
-
-#class ReservationCartForm(ModelForm):
-#    class Meta:
-#        model = ReservationCart
-#        fields = ['quantity', 'date']  # bildirimde forma ihtiyacı var kaç adet olacağı
-
-
 class Reservation(models.Model):
     STATUS = (
         ('New', 'New'),
@@ -56,6 +32,7 @@ class Reservation(models.Model):
     country = models.CharField(blank=True, max_length=20)
     quantity = models.IntegerField()
     date = models.DateTimeField(blank=True)
+    time = models.TimeField(blank=True)
     take_off = models.CharField(blank=True, max_length=20, choices=CHOICE, default='-')
     arrive = models.CharField(blank=True, max_length=20, choices=CHOICE, default='-')
     price = models.FloatField()
@@ -72,7 +49,7 @@ class Reservation(models.Model):
 class ReservationForm(ModelForm):
     class Meta:
         model = Reservation
-        fields = ['first_name', 'last_name', 'phone', 'quantity','address','city', 'date', 'take_off', 'arrive', 'country','price']
+        fields = ['first_name', 'last_name', 'phone', 'quantity','address','city', 'date', 'time', 'take_off', 'arrive', 'country','price']
 
 
 class ReservationCar(models.Model):
