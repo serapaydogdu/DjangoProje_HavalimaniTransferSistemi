@@ -11,10 +11,10 @@ class UserUpdateForm(UserChangeForm):
         model = User
         fields = ('username', 'email', 'first_name', 'last_name')
         widgets = {
-            'username'    : TextInput(attrs={'class': 'input','placeholder': 'username'}),
-            'email'       : EmailInput(attrs={'class': 'input','placeholder': 'email'}),
-            'first_name'  : TextInput(attrs={'class': 'input','placeholder': 'first_name'}),
-            'last_name'   : TextInput(attrs={'class': 'input','placeholder': 'last_name'}),
+            'username'    : TextInput(attrs={'class': 'input-group col-md-6','placeholder': 'username'}),
+            'email'       : EmailInput(attrs={'class': 'input-group col-md-6','placeholder': 'email'}),
+            'first_name'  : TextInput(attrs={'class': 'input-group col-md-6','placeholder': 'first_name'}),
+            'last_name'   : TextInput(attrs={'class': 'input-group col-md-6','placeholder': 'last_name'}),
         }
 
 CITY = [
@@ -30,9 +30,9 @@ class ProfileUpdateForm(forms.ModelForm):
         model = UserProfile
         fields = ('phone', 'address', 'city', 'country', 'image')
         widgets = {
-            'phone'     : TextInput(attrs={'class': 'input', 'placeholder': 'phone'}),
-            'address'   : TextInput(attrs={'class': 'input', 'placeholder': 'address'}),
-            'city'      : Select(attrs={'class': 'input', 'placeholder': 'city'},choices=CITY),
-            'country'   : TextInput(attrs={'class': 'input', 'placeholder': 'country'}),
-            'image'     : FileInput(attrs={'class': 'input', 'placeholder': 'image'}),
+            'phone'     : TextInput(attrs={'class': 'input-group col-md-6', 'placeholder': 'phone'}),
+            'address'   : TextInput(attrs={'class': 'input-group col-md-6', 'placeholder': 'address'}),
+            'city'      : Select(attrs={'class': 'input-group col-md-6', 'placeholder': 'city'},choices=CITY),
+            'country'   : TextInput(attrs={'class': 'input-group col-md-6', 'placeholder': 'country'}),
+            'image'     : FileInput(attrs={'class': 'input-group col-md-6', 'placeholder': 'image'}),
         }
